@@ -1,0 +1,122 @@
+.vision-mission-section {
+    background-color: var(--bg-white);
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    /* Reduced from default section-padding */
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* Reduced from 4rem */
+    position: relative;
+    z-index: 2;
+}
+
+.vm-card {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    /* Reduced from 4rem 3rem */
+    border-radius: 4px;
+    /* Slightly rounded, keeping it professional */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+    /* Soft, premium shadow */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.vm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1);
+}
+
+.vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.vm-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon Styling */
+.vm-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    background-color: rgba(184, 115, 51, 0.1);
+    /* Low opacity secondary color */
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.vm-card:hover .vm-icon-wrapper {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.vm-icon-svg {
+    width: 40px;
+    height: 40px;
+    transition: all 0.4s ease;
+}
+
+/* Typography */
+.vm-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.vm-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    max-width: 90%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .vision-mission-grid {
+        gap: 2rem;
+    }
+
+    .vm-card {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .vm-title {
+        font-size: 1.5rem;
+    }
+}

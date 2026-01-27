@@ -1,0 +1,34 @@
+.contact-page {
+    background-color: var(--bg-white);
+}
+
+.info-item h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.contact-form-container {
+    border-left: none;
+    border-top: 4px solid var(--primary-color);
+    padding: 3rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(184, 115, 51, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}

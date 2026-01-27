@@ -1,0 +1,69 @@
+.esg-section {
+    background-color: var(--bg-light);
+}
+
+.esg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.esg-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.esg-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.esg-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.esg-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    min-height: 4.5rem;
+}
+
+.esg-list {
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.esg-list li {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.esg-list li span {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .esg-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .esg-grid {
+        grid-template-columns: 1fr;
+    }
+}
