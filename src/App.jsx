@@ -11,6 +11,8 @@ import Sustainability from './pages/Sustainability';
 import Contact from './pages/Contact';
 import Media from './pages/Media';
 import InvestorRelations from './pages/InvestorRelations';
+import Careers from './pages/Careers';
+import FAQs from './pages/FAQs';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -54,6 +56,8 @@ const AppContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/media" element={<Media />} />
           <Route path="/investor-relations" element={<InvestorRelations />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/faqs" element={<FAQs />} />
         </Routes>
       </main>
       <Footer />

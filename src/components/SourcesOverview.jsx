@@ -1,92 +1,118 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SourcesOverview.css';
 
 import energyImg from '../assets/renewable-energy.png';
+import itLogo from '../assets/logo.png';
+import techSupportLogo from '../assets/tech-support-logo.png';
+import dmLogo1 from '../assets/skill3-removebg-preview.png';
+import dmLogo2 from '../assets/hero3-removebg-preview.png';
+import trainingsLogo from '../assets/gyantrix.png';
+import hrLogo1 from '../assets/verify3-removebg-preview.png';
+import hrLogo2 from '../assets/ghs3-removebg-preview.png';
+import frLogo1 from '../assets/tax3-removebg-preview.png';
+import frLogo2 from '../assets/qfl3-removebg-preview.png';
+import market5Img from '../assets/market5.png';
+import interiorImg from '../assets/interior.png';
+import construct5Img from '../assets/construct5.png';
 
 const sourcesData = [
     {
-        id: 'finance',
-        title: 'Financial Services',
-        icon: '🏦',
-        heroTitle: 'Finance: Institutional Fiscal Governance',
-        heroDesc: 'Strategic wealth management and corporate finance solutions built on a foundation of capital discipline.',
-        bubbles: [
-            { name: 'Sarah Miller', comment: 'Yield optimization is consistently meeting our targets.', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Arthur Reed', comment: 'Every transaction is mapped to institutional guidelines.', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150' },
-            { name: 'S. Mehta', comment: 'The asset allocation strategy is extremely balanced.', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150' }
-        ],
-        mainImage: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=1000',
-        cta: 'Investment Advisory'
-    },
-    {
         id: 'it',
-        title: 'Technology',
+        title: 'Information Technology',
         icon: '💻',
-        heroTitle: 'Technology: Driving Digital Prowess',
-        heroDesc: 'Harnessing enterprise-grade architecture and cloud scalability to build the future of institutional infrastructure.',
+        heroTitle: 'Information Technology: Driving Digital Growth',
+        heroDesc: 'Information Technology (IT) refers to the development, management, and use of computer-based systems, networks, software, and digital applications to collect, store, process, secure, and distribute information. It enables organizations to improve efficiency, enhance communication, automate operations, and deliver innovative solutions that create business value in a digital-first world drive innovation and digital growth across industries.',
         bubbles: [
-            { name: 'Elena Vance', comment: 'The cloud scalability here is unmatched for enterprise needs.', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
-            { name: 'David Cho', comment: 'Security protocols are strictly governance-aligned.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Anil Kumar', comment: 'AI integration has optimized our backend latency by 40%.', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150' }
+            { name: 'FutureInvo', comment: 'Visit us for cutting-edge IT solutions.', avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Efficiency', comment: 'Organizations are increasingly adopting IT solutions to enhance performance, improve customer service, and reduce costs.', avatar: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Innovation', comment: 'IT plays a critical role in shaping innovation, improving decision-making, and driving long-term growth.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' }
         ],
-        mainImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000',
-        cta: 'Tech Consult'
+        mainImage: itLogo,
+        cta: 'Visit Website'
     },
     {
-        id: 'logistics',
-        title: 'Logistics & Infra',
-        icon: '🏗️',
-        heroTitle: 'Logistics: Building Global Corridors',
-        heroDesc: 'Optimizing supply chain networks and sustainable infrastructure for multi-modal transport efficiency.',
+        id: 'tech-support',
+        title: 'Tech Support',
+        icon: '🛠️',
+        heroTitle: 'Tech Support: Fast & Reliable Assistance',
+        heroDesc: 'Our Tech Support Services are designed to provide quick, reliable, and expert assistance to keep your technology running without interruption. From diagnosing technical issues to offering step-by-step guidance, our team ensures timely support for computers, software, networks, and digital applications.',
         bubbles: [
-            { name: 'Mark Jensen', comment: 'Fleet management is now fully real-time and automated.', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Suman Singh', comment: 'Our last-mile delivery cost dropped significantly.', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Vikram', comment: 'The new logistics hub is a masterpiece of efficiency.', avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150' }
+            { name: 'Efficiency', comment: 'Proactive monitoring to prevent problems before they occur and minimize downtime.', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Solutions', comment: 'Help with system setup, troubleshooting, installation, or updates for smooth experience.', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Commitment', comment: 'Fast responses, clear communication, and user-friendly solutions that matter.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' }
         ],
-        mainImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000',
-        cta: 'Explore Networks'
+        mainImage: techSupportLogo,
+        cta: 'Get Support'
     },
     {
-        id: 'healthcare',
-        title: 'Healthcare',
-        icon: '🏥',
-        heroTitle: 'Healthcare: Medical Excellence',
-        heroDesc: 'Pioneering diagnostic technology and hospital management systems with a focus on patient outcomes.',
+        id: 'digital-marketing',
+        title: 'Digital Marketing',
+        icon: '📈',
+        heroTitle: 'Digital Marketing: Data-Driven Strategies',
+        heroDesc: 'Digital Marketing is a strategic approach to promoting brands, products, and services through online platforms. It involves using tools like social media, search engines, email campaigns, and content marketing to reach the right audience at the right time.',
         bubbles: [
-            { name: 'Dr. Shruti', comment: 'The new diagnostic suite is incredibly accurate.', avatar: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Leo Martinez', comment: 'User interface for patient records is very intuitive.', avatar: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Hospital Admin', comment: 'Resource allocation has never been this balanced.', avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150' }
+            { name: 'Targeting', comment: 'Using social media and search engines to reach the right audience at the right time.', avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Engagement', comment: 'Optimizing visibility and delivering targeted content for stronger customer engagement.', avatar: 'https://images.unsplash.com/photo-1573497019236-17f8177b81e8?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Growth', comment: 'Data-driven strategies and creative campaigns to drive measurable and long-term success.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' }
         ],
-        mainImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000',
-        cta: 'View Facilities'
+        mainImages: [dmLogo1, dmLogo2],
+        cta: 'Boost Growth'
     },
     {
-        id: 'energy',
-        title: 'Renewable Energy',
-        icon: '⚡',
-        heroTitle: 'Energy: Powering a Greener Tomorrow',
-        heroDesc: 'Investing in large-scale solar and wind projects to achieve carbon neutrality and sustainable growth.',
+        id: 'trainings',
+        title: 'Trainings',
+        icon: '🎓',
+        heroTitle: 'Trainings: Practical Skill Development',
+        heroDesc: 'Training plays a vital role in enhancing knowledge, improving skills, and shaping individuals for professional growth. Our Training & Skill Development programs are designed to provide practical, industry-focused learning that empowers participants to excel in their careers.',
         bubbles: [
-            { name: 'Impact Lead', comment: 'Solar yield has exceeded our initial projections.', avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Erik Storm', comment: 'The storage integration is perfectly stable.', avatar: 'https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&q=80&w=150' },
-            { name: 'ESG Analyst', comment: 'We saved 50,000 tons of CO2 this quarter.', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150' }
+            { name: 'Hands-on', comment: 'Learners gain hands-on experience and confidence with real-world application.', avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Interactive', comment: 'Sessions delivered by experienced trainers focusing on interactive learning and performance.', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Expertise', comment: 'Equipping teams with the right skills to meet evolving industry standards.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' }
         ],
-        mainImage: energyImg,
-        cta: 'ESG Goals'
+        mainImage: trainingsLogo,
+        cta: 'Explore Academy'
     },
     {
-        id: 'realestate',
-        title: 'Real Estate',
-        icon: '🏢',
-        heroTitle: 'Real Estate: Urban Landmarks',
-        heroDesc: 'Developing premium residential and commercial spaces that redefine urban living and workspace efficiency.',
+        id: 'human-resources',
+        title: 'Human Resources',
+        icon: '🤝',
+        heroTitle: 'Human Resources: Empowering People',
+        heroDesc: "Human Resources (HR) is the core function that manages and supports an organization's most valuable asset — its people. HR focuses on recruitment, employee welfare, performance management, training, and creating a positive work environment that encourages growth and productivity.",
         bubbles: [
-            { name: 'Ar. Khanna', comment: 'The architectural symmetry in the new tower is flawless.', avatar: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Project Lead', comment: 'Occupancy rates have hit 95% within the first month.', avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=150' },
-            { name: 'Mia Wong', comment: 'Sustainable materials have been integrated seamlessly.', avatar: 'https://images.unsplash.com/photo-1567532939847-8a5020de98d7?auto=format&fit=crop&q=80&w=150' }
+            { name: 'Nurturing Talent', comment: 'Ensuring the right talent is hired and nurtured through effective policies.', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Workplace Culture', comment: 'Building a positive environment and aligning people strategies with business goals.', avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Proffessionalism', comment: 'Fostering communication, trust, and professionalism for a motivated workforce.', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' }
         ],
-        mainImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
-        cta: 'View Projects'
+        mainImages: [hrLogo1, hrLogo2],
+        cta: 'Career Opportunities'
+    },
+    {
+        id: 'finance-registration',
+        title: 'Finance Registration',
+        icon: '📝',
+        heroTitle: 'Finance & Registration: Building Formal Foundations',
+        heroDesc: 'Finance and Registration services play a crucial role in helping individuals and businesses establish a strong legal and financial foundation. These services include business registration, financial documentation, compliance support, tax filing, and statutory registrations.',
+        bubbles: [
+            { name: 'Compliance', comment: 'Hassle-free processing focused on growth while we handle legal and financial formalities.', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Transparency', comment: 'Avoiding legal complications and maintaining financial transparency with expert guidance.', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Foundations', comment: 'Company registration, GST filing, and financial planning for a seamless business journey.', avatar: 'https://images.unsplash.com/photo-1573497019236-17f8177b81e8?auto=format&fit=crop&q=80&w=150' }
+        ],
+        mainImages: [frLogo1, frLogo2],
+        cta: 'Get Registered'
+    },
+    {
+        id: 'others',
+        title: 'Marketing',
+        icon: '🌐',
+        heroTitle: 'Strategic Marketing: Building Brand Connections',
+        heroDesc: 'Marketing is the strategic process of understanding customer needs, creating value, and building strong brand connections to drive business growth. Effective marketing not only increases brand visibility but also builds trust.',
+        bubbles: [
+            { name: 'Branding', comment: 'Developing compelling messages and promoting products through the right channels.', avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Strategy', comment: 'Combining creativity with data-driven strategies to stay competitive and reach the right audience.', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150' },
+            { name: 'Growth', comment: 'Establishing long-term customer relationships and achieving sustainable success.', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' }
+        ],
+        mainImages: [market5Img, interiorImg, construct5Img],
+        cta: 'Contact Us'
     }
 ];
 
@@ -140,11 +166,29 @@ const SourcesOverview = () => {
                         ))}
                     </div>
 
-                    {/* Image Frame Side */}
+                    {/* Image Frame Side - Show all logos if multiple, or single logo */}
                     <div className="frame-side">
-                        <div className="image-frame">
-                            <img src={active.mainImage} alt={active.title} />
-                        </div>
+                        {active.mainImages ? (
+                            // Multiple logos - display all in a grid
+                            <div className={`logos-grid ${active.id === 'others' ? 'marketing-logos' : ''} ${active.id === 'finance-registration' ? 'finance-logos' : ''} ${active.id === 'digital-marketing' ? 'digital-marketing-logos' : ''} ${active.id === 'human-resources' ? 'hr-logos' : ''}`}>
+                                {active.mainImages.map((img, idx) => (
+                                    <div key={idx} className={`image-frame ${active.id === 'it' || active.id === 'tech-support' || active.id === 'digital-marketing' || active.id === 'trainings' || active.id === 'human-resources' || active.id === 'finance-registration' || active.id === 'others' ? 'it-white-bg' : ''}`}>
+                                        <img
+                                            src={img}
+                                            alt={`${active.title} ${idx + 1}`}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            // Single logo
+                            <div className={`image-frame ${active.id === 'it' || active.id === 'tech-support' || active.id === 'digital-marketing' || active.id === 'trainings' || active.id === 'human-resources' || active.id === 'finance-registration' || active.id === 'others' ? 'it-white-bg' : ''} ${active.id === 'trainings' ? 'trainings-logo' : ''}`}>
+                                <img
+                                    src={active.mainImage}
+                                    alt={active.title}
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

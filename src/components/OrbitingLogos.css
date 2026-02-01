@@ -1,0 +1,243 @@
+/* OrbitingLogos.css - Purple Edition */
+.orbit-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 600px;
+    /* Base size */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+.orbit-guide {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    /* Subtle Purple Guide */
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.guide-inner {
+    width: 68%;
+    /* 2 * 34% */
+    height: 68%;
+    border-style: dashed;
+}
+
+.guide-outer {
+    width: 120%;
+    /* 2 * 60% */
+    height: 120%;
+}
+
+.orbit-group-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Center Core */
+.center-logo-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+    border: 2px solid rgba(139, 92, 246, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.center-logo-wrapper:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
+}
+
+.center-logo-wrapper img {
+    width: 75%;
+    height: auto;
+}
+
+/* Orbiting Mechanics */
+.orbit-item-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.orbit-item-inner-wrapper {
+    animation: rotateOrbit var(--duration) linear infinite;
+}
+
+.orbit-item-outer-wrapper {
+    animation: rotateOrbitReverse var(--duration) linear infinite;
+}
+
+@keyframes rotateOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateOrbitReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(139, 92, 246, 0.2);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    /* Icon above label */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+    /* Counter-rotation handles assigned below */
+    pointer-events: auto;
+    /* Capture clicks on the icon itself */
+}
+
+.orbit-item-inner-wrapper .orbit-item {
+    animation: counterRotate var(--duration) linear infinite;
+}
+
+.orbit-item-outer-wrapper .orbit-item {
+    animation: counterRotateReverse var(--duration) linear infinite;
+}
+
+@keyframes counterRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes counterRotateReverse {
+    from {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+/* Radii Positioning (User Custom) */
+.orbit-item-inner-wrapper .orbit-item {
+    margin-left: 34%;
+}
+
+.orbit-item-outer-wrapper .orbit-item {
+    margin-left: 60%;
+}
+
+.orbit-item:hover {
+    background: white;
+    border-color: #8b5cf6;
+    /* Vibrant Purple Hue */
+    box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 50;
+}
+
+.orbit-item span:first-child {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* Labels below Icons, hidden by default */
+.node-label {
+    position: absolute;
+    top: 105%;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #7c3aed;
+    /* Deep Purple */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    padding-top: 4px;
+}
+
+.orbit-item:hover .node-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active Highlight */
+.orbit-item-wrapper.active .orbit-item {
+    background: #7c3aed;
+    border-color: #8b5cf6;
+    color: white;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.orbit-item-wrapper.active .node-label {
+    opacity: 1;
+    transform: translateY(0);
+    color: #7c3aed;
+    font-weight: 900;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .orbit-container {
+        max-width: 350px;
+    }
+
+    .orbit-item {
+        width: 34px;
+        height: 34px;
+    }
+
+    .orbit-item span:first-child {
+        font-size: 1rem;
+    }
+
+    .center-logo-wrapper {
+        width: 65px;
+        height: 65px;
+    }
+}

@@ -8,10 +8,13 @@
   --accent-color: #004080;
   --text-dark: #1A1A1A;
   --text-light: #4A4A4A;
-  --bg-light: #F8F9FA;
-  --bg-white: #FFFFFF;
-  --border-color: #E0E0E0;
-  --transition-speed: 0.3s;
+  --bg-light: #F4F7F9;
+  /* Frost Gray */
+  --bg-white: #FDFDFD;
+  /* Ivory Smoke */
+  --border-color: #E8EEF2;
+  --transition-speed: 0.8s;
+  --easing-premium: cubic-bezier(0.4, 0, 0.2, 1);
 
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
@@ -48,6 +51,15 @@ h6 {
   font-weight: 700;
   color: var(--primary-color);
   line-height: 1.2;
+  transition: color var(--transition-speed) var(--easing-premium);
+}
+
+section,
+.card,
+body {
+  transition: background-color var(--transition-speed) var(--easing-premium),
+    border-color var(--transition-speed) var(--easing-premium),
+    box-shadow var(--transition-speed) var(--easing-premium);
 }
 
 a {
@@ -92,6 +104,10 @@ ul {
   background-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
+}
+
+.text-white {
+  color: white !important;
 }
 
 .text-center {
@@ -186,23 +202,37 @@ ul {
   }
 }
 
-/* Premium Kapil Group Style Animations */
-@keyframes fadeInUp {
-  from {
+/* Premium Institutional Animations */
+@keyframes premiumReveal {
+  0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px) skewY(2deg) scale(0.98);
+    filter: blur(10px);
   }
 
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) skewY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes titleLineReveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 50px;
+    opacity: 1;
   }
 }
 
 /* Base class for elements to reveal */
 .reveal-item {
   opacity: 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: premiumReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* Staggered Delays for common layouts */
@@ -223,9 +253,11 @@ ul {
 .leadership-grid .leader-card:nth-child(n),
 .subsidiaries-grid .card:nth-child(n),
 .partnerships-grid .card:nth-child(n),
-.news-grid .card:nth-child(n) {
+.news-grid .card:nth-child(n),
+.subsidiaries-grid-premium .subsidiary-card-minimal:nth-child(n),
+.executive-grid .executive-card:nth-child(n) {
   opacity: 0;
-  animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: premiumReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .verticals-grid .minimal-card:nth-child(1) {
@@ -298,25 +330,25 @@ ul {
 
 /* Apply reveal to section headers by default when inside .page-reveal */
 .page-reveal .section-subtitle {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: premiumReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: 0.1s;
   opacity: 0;
 }
 
 .page-reveal .section-title {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.2s;
+  animation: premiumReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.25s;
   opacity: 0;
 }
 
 .page-reveal .section-line {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.3s;
+  animation: titleLineReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.4s;
   opacity: 0;
 }
 
 .page-reveal p {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+  animation: premiumReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.5s;
   opacity: 0;
 }

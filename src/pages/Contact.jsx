@@ -11,7 +11,7 @@ const Contact = () => {
                         <h1 className="section-title">Connect with RVH Group</h1>
                         <div className="section-line center"></div>
                         <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', color: 'var(--text-light)' }}>
-                            Whether you are a potential partner, investor, or have a general inquiry, we are here to provide the information you need.
+                            We’re here to support you with any inquiries related to our services, partnerships, training programs or business opportunities. Connect with us and our team will be happy to assist you.
                         </p>
                     </div>
 
@@ -32,7 +32,7 @@ const Contact = () => {
                                 <h3>Contact Details</h3>
                                 <p><strong>Email:</strong> info@rvhgroups.com</p>
                                 <p><strong>Investor Relations:</strong> ir@rvhgroups.com</p>
-                                <p><strong>Phone:</strong> +91 40 4000 0000</p>
+                                <p><strong>Phone:</strong> +91-73868-79818</p>
                             </div>
                         </div>
 

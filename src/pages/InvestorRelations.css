@@ -1,7 +1,31 @@
 .ir-hero {
-    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
 }
+
+.ir-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.8));
+    z-index: 1;
+}
+
+
+.ir-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
 
 .highlights-grid {
     display: grid;

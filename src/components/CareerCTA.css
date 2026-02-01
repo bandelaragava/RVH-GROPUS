@@ -1,0 +1,61 @@
+.career-cta-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.career-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.career-road-map {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.career-text-col {
+    text-align: left;
+}
+
+.career-text-col .section-subtitle {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.career-text-col .section-title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.career-p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+    .career-content-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .career-text-col {
+        text-align: center;
+    }
+
+    .career-road-map {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .career-image-col {
+        order: -1;
+        /* Image first on mobile */
+    }
+}

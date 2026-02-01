@@ -25,6 +25,7 @@ const leaders = [
     },
 ];
 
+
 const About = () => {
     return (
         <div className="about-page">
@@ -36,29 +37,49 @@ const About = () => {
                         </div>
                         <div className="about-content-col">
                             <h2 className="about-main-title">
-                                Institutional Excellence <br />
-                                <span className="highlight-text">Since Inception</span>
+                                Empowering Ideas With<br />
+                                <span className="highlight-text">Intelligent Innovation</span>
                             </h2>
                             <p className="about-desc">
-                                RVH Group is a diversified conglomerate with a strong presence across Healthcare, Infrastructure, Logistics, and Technology. Our journey is defined by a commitment to governance, sustainability, and building value for all stakeholders.
+                                RVH Group is a business solutions & services group that builds practical technology, operations, and growth engines for companies of every size. We combine startup speed with enterprise-grade delivery to launch products, scale operations, and unlock new revenue channels — faster and with purpose.
+                            </p>
+                            <p className="about-desc" style={{ marginTop: '-2rem', borderLeft: 'none', paddingTop: '0' }}>
+                                We partner with organisations across IT, tech support, digital marketing, HR, training and finance to deliver measurable outcomes — from idea to execution.
                             </p>
 
                             <div className="about-stats">
                                 <div className="stat-item">
-                                    <span className="stat-number">18+</span>
-                                    <span className="stat-label">Companies</span>
+                                    <span className="stat-number">IT</span>
+                                    <span className="stat-label">Services</span>
                                 </div>
                                 <div className="stat-divider"></div>
                                 <div className="stat-item">
-                                    <span className="stat-number">4</span>
-                                    <span className="stat-label">Key Sectors</span>
+                                    <span className="stat-number">Digital</span>
+                                    <span className="stat-label">Marketing</span>
                                 </div>
                                 <div className="stat-divider"></div>
                                 <div className="stat-item">
-                                    <span className="stat-number">30+</span>
-                                    <span className="stat-label">Years Legacy</span>
+                                    <span className="stat-number">Finance</span>
+                                    <span className="stat-label">& HR</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section className="section-padding" id="what-we-do">
+                <div className="container">
+                    <div className="section-header text-center mb-5">
+                        <h2 className="section-title">What We Do</h2>
+                        <div className="section-line center"></div>
+                    </div>
+                    <div className="wwd-grid">
+                        <div className="wwd-text">
+                            <p>We provide a wide range of professional services designed to help individuals, startups, and businesses grow with confidence in the digital age. Our focus is on delivering high-quality, innovative and result-oriented solutions.</p>
+                            <p>From IT services, digital marketing, and business support to training & professional development — RVH Group is committed to empowering growth through expertise and excellence.</p>
                         </div>
                     </div>
                 </div>
@@ -101,18 +122,18 @@ const About = () => {
             <section className="section-padding" id="governance">
                 <div className="container">
                     <div className="section-header text-center mb-3">
-                        <span className="section-subtitle">Integrity & Ethics</span>
-                        <h2 className="section-title">Corporate Governance</h2>
+                        <span className="section-subtitle">Impact & Reach</span>
+                        <h2 className="section-title">Our Global Presence</h2>
                         <div className="section-line center"></div>
                     </div>
                     <div className="governance-content">
                         <div>
-                            <h3>Our Approach</h3>
-                            <p>We maintain the highest standards of transparency and accountability. Our governance framework is designed to protect stakeholder interests and ensure long-term sustainability.</p>
+                            <h3>RVH Group</h3>
+                            <p>RVH Group refers to the global organization, and may refer to one or more, of the member firms, each of which is a separate legal entity. We provide comprehensive services to clients.</p>
                         </div>
                         <div>
-                            <h3>Board Committees</h3>
-                            <p>Strategic oversight is provided by our dedicated committees specializing in Audit, Risk Management, and Ethics.</p>
+                            <h3>Our Approach</h3>
+                            <p>We maintenance the highest standards of transparency and accountability. Our governance framework is designed to protect stakeholder interests and ensure long-term sustainability.</p>
                         </div>
                     </div>
                 </div>

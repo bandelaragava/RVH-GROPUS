@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 import heroBg from '../assets/hero-bg.png';
 
@@ -6,9 +7,9 @@ import heroBg from '../assets/hero-bg.png';
 const carouselImages = [
     heroBg,
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000', // Modern architecture
-    'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=2000', // Business/Finance
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000', // Diverse business collaboration (3rd)
     'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000', // Office/Corporate
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000', // Technology
+    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2000', // Modern Tech/Innovation Center (5th)
 ];
 
 const Hero = () => {
@@ -39,11 +40,11 @@ const Hero = () => {
             ))}
             <div className="container hero-container">
                 <div className="hero-content">
-                    <h1 className="hero-title">A Diversified Group Building Durable Businesses</h1>
-                    <p className="hero-subtitle">Operating across multiple sectors with long-term focus and institutional governance.</p>
+                    <h1 className="hero-title">Empowering Ideas With<br />Intelligent Innovation</h1>
+                    <p className="hero-subtitle">Operating across multiple industries, we provide practical technology, operations, and growth engines for companies of every size.</p>
                     <div className="hero-actions">
-                        <a href="#about" className="btn btn-primary">Our Legacy</a>
-                        <a href="#businesses" className="btn btn-outline" style={{ marginLeft: '1rem', border: '1px solid var(--primary-color)', color: 'white' }}>Our Businesses</a>
+                        <Link to="/about" className="btn btn-primary">Our Legacy</Link>
+                        <Link to="/businesses" className="btn btn-outline" style={{ marginLeft: '1rem', border: '1px solid var(--primary-color)', color: 'white' }}>Our Businesses</Link>
                     </div>
                 </div>
             </div>

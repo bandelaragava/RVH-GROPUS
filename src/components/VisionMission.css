@@ -1,122 +1,165 @@
+/* --- Vision & Mission Section (New Design) --- */
 .vision-mission-section {
-    background-color: var(--bg-white);
     position: relative;
+    width: 100%;
+    /* Remove padding to let images touch edges if desired, or keep minimal */
+    padding: 0;
     overflow: hidden;
-    padding: 2rem 0;
-    /* Reduced from default section-padding */
+    background: #0f172a;
+    /* Dark fallback */
 }
 
-.vision-mission-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    /* Reduced from 4rem */
+.vm-container {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    /* Fixed height for the banner effect */
     position: relative;
-    z-index: 2;
 }
 
-.vm-card {
-    background: #ffffff;
-    padding: 2.5rem 2rem;
-    /* Reduced from 4rem 3rem */
-    border-radius: 4px;
-    /* Slightly rounded, keeping it professional */
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
-    /* Soft, premium shadow */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+/* --- Block Styling --- */
+.vm-block {
+    flex: 1;
     position: relative;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-
-.vm-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1);
-}
-
-.vm-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.vm-card:hover::before {
-    transform: scaleX(1);
-}
-
-/* Icon Styling */
-.vm-icon-wrapper {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
-    border-radius: 50%;
-    background-color: rgba(184, 115, 51, 0.1);
-    /* Low opacity secondary color */
-    color: var(--secondary-color);
-    transition: all 0.4s ease;
+    text-align: center;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: default;
 }
 
-.vm-card:hover .vm-icon-wrapper {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    transform: scale(1.1);
+.vm-block:last-child {
+    border-right: none;
 }
 
-.vm-icon-svg {
-    width: 40px;
-    height: 40px;
-    transition: all 0.4s ease;
+/* Hover Effect: Expand the hovered block */
+.vm-block.active {
+    flex: 2;
+    /* Expands to take more space */
 }
 
-/* Typography */
+/* Dark Overlay */
+.vm-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darkens image for readability */
+    transition: background 0.4s ease;
+    z-index: 1;
+}
+
+.vm-block:hover .vm-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    /* Lightens slightly on hover */
+}
+
+/* --- Content --- */
+.vm-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: #fff;
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.5s ease;
+}
+
+/* --- Typography --- */
 .vm-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: -0.5px;
+    font-family: 'Outfit', sans-serif;
+    /* Or the site's primary heavy font */
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    transition: transform 0.4s ease, color 0.4s ease;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.vm-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-light);
-    max-width: 90%;
+.vm-details {
+    margin-top: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
 }
 
-/* Responsive */
+/* Show details on hover */
+.vm-block:hover .vm-details,
+/* Or if we want it always visible on mobile/default state, we can adjust logic. 
+   For now, strictly hover for desktop "Service" feel. */
+.vm-block.active .vm-details {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+    /* ample space */
+}
+
+.vm-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* --- Core Values List --- */
+.vm-values-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.vm-values-list li {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Responsive --- */
 @media (max-width: 992px) {
-    .vision-mission-grid {
-        gap: 2rem;
+    .vm-container {
+        flex-direction: column;
+        height: auto;
     }
 
-    .vm-card {
-        padding: 3rem 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .vision-mission-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .vm-block {
+        width: 100%;
+        height: 300px;
+        /* Stacked height */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .vm-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    /* .vm-details rule removed */
+
+    .vm-block.active {
+        flex: none;
+        height: 400px;
+        /* Expand height on tap */
     }
 }

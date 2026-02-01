@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container footer-grid">
                 <div className="footer-brand">
                     <Link to="/" className="footer-logo">RVH <span className="logo-accent">GROUP</span></Link>
-                    <p className="footer-desc">A diversified business group committed to capital discipline and long-term value creation through institutional governance.</p>
+                    <p className="footer-desc">RVH Group is a business solutions & services group that builds practical technology, operations, and growth engines for companies of every size.</p>
                 </div>
                 <div className="footer-links">
                     <h4>About RVH</h4>
@@ -33,7 +33,7 @@ const Footer = () => {
                     <ul>
                         <li><Link to="/sustainability">Sustainability</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/about#governance">Compliance</Link></li>
+                        {/* <li><Link to="/about#governance">Compliance</Link></li> */}
                         <li><Link to="/media">Media Center</Link></li>
                         <li><Link to="/investor-relations">Investor Relations</Link></li>
                     </ul>
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <div className="container">
-                    <p>&copy; {new Date().getFullYear()} RVH Group. All rights reserved. Institutional | Investor-Ready | Zero-Fluff</p>
+                    <p>&copy; {new Date().getFullYear()} RVH Group. All rights reserved.</p>
                 </div>
             </div>
         </footer>

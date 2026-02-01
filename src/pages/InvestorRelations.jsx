@@ -18,7 +18,7 @@ const InvestorRelations = () => {
 
     return (
         <div className="ir-page" style={{ paddingTop: '80px' }}>
-            <section className="ir-hero section-padding bg-dark text-white">
+            <section className="ir-hero section-padding text-white">
                 <div className="container">
                     <span className="section-subtitle" style={{ color: 'var(--secondary-color)' }}>Financial Excellence</span>
                     <h1 className="section-title text-white">Investor Relations</h1>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -43,9 +43,9 @@ const Navbar = () => {
         </button>
 
         <ul className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-          <li><Link to="/">Home</Link></li>
+          <li><NavLink to="/" end>Home</NavLink></li>
           <li className="dropdown">
-            <Link to="/about">About RVH</Link>
+            <NavLink to="/about">About RVH</NavLink>
             <ul className="dropdown-menu">
               <li><Link to="/about#chairman">Chairman's Message</Link></li>
               <li><Link to="/about#vision">Vision & Mission</Link></li>
@@ -54,15 +54,17 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="dropdown">
-            <Link to="/businesses">Businesses</Link>
+            <NavLink to="/businesses">Businesses</NavLink>
             <ul className="dropdown-menu">
               <li><Link to="/businesses#businesses">Sectors</Link></li>
               <li><Link to="/businesses#subsidiaries">Subsidiaries</Link></li>
             </ul>
           </li>
-          <li><Link to="/sustainability">Sustainability</Link></li>
-          <li><Link to="/media">Media</Link></li>
-          <li><Link to="/contact" className="nav-cta">Contact</Link></li>
+          <li><NavLink to="/sustainability">Sustainability</NavLink></li>
+          <li><NavLink to="/careers">Careers</NavLink></li>
+          <li><NavLink to="/faqs">FAQ's</NavLink></li>
+          <li><NavLink to="/media">Media</NavLink></li>
+          <li><NavLink to="/contact" className="nav-cta">Contact</NavLink></li>
         </ul>
       </div>
     </nav>
