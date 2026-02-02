@@ -15,7 +15,7 @@ const Contact = () => {
                         </p>
                     </div>
 
-                    <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4rem', marginTop: '4rem' }}>
+                    <div className="contact-grid">
                         <div className="contact-info">
                             <h2 className="mb-2">Institutional Hubs</h2>
                             <div className="info-item mb-2">
@@ -36,37 +36,37 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="contact-form-container card">
+                        <div className="contact-form-container">
                             <h2 className="mb-2">Inquiry Form</h2>
                             <form className="contact-form">
                                 <div className="form-group mb-1">
-                                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Full Name</label>
-                                    <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-color)', borderRadius: '2px' }} />
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="John Doe" />
                                 </div>
                                 <div className="form-group mb-1">
-                                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email Address</label>
-                                    <input type="email" placeholder="john@example.com" style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-color)', borderRadius: '2px' }} />
+                                    <label>Email Address</label>
+                                    <input type="email" placeholder="john@example.com" />
                                 </div>
                                 <div className="form-group mb-1">
-                                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Organization</label>
-                                    <input type="text" placeholder="Company Name" style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-color)', borderRadius: '2px' }} />
+                                    <label>Organization</label>
+                                    <input type="text" placeholder="Company Name" />
                                 </div>
                                 <div className="form-group mb-2">
-                                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Message</label>
-                                    <textarea rows="4" placeholder="How can we help you?" style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-color)', borderRadius: '2px' }}></textarea>
+                                    <label>Message</label>
+                                    <textarea rows="4" placeholder="How can we help you?"></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Message</button>
+                                <button type="submit" className="btn-submit">Send Message</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="section-padding bg-light">
+            <section className="map-section">
                 <div className="container text-center">
                     <h2 className="mb-2">Global Presence</h2>
-                    <div className="map-placeholder" style={{ width: '100%', height: '400px', background: '#e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <p style={{ color: 'var(--text-light)' }}>Interactive Presence Map Loading...</p>
+                    <div className="map-placeholder">
+                        <p style={{ display: 'none' }}>Interactive Presence Map Loading...</p>
                     </div>
                 </div>
             </section>

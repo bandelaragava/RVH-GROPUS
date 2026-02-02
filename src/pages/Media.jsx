@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Media.css';
 
 const newsItems = [
     {
@@ -56,25 +57,50 @@ const Media = () => {
 
             <section className="section-padding bg-light">
                 <div className="container">
-                    <div className="news-grid" style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}>
+                    <div className="news-grid">
                         {newsItems.map((item, index) => (
-                            <div key={index} className="card">
-                                <span style={{ color: 'var(--text-light)', fontSize: '0.8rem' }}>{item.date}</span>
-                                <h4 style={{ margin: '1rem 0', fontSize: '1.1rem' }}>{item.title}</h4>
-                                <p style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginBottom: '1rem' }}>{item.excerpt}</p>
-                                <a href={item.link} style={{ color: 'var(--primary-color)', fontWeight: '600', fontSize: '0.85rem' }}>READ MORE →</a>
+                            <div key={index} className="news-card-wrapper">
+                                <article className="news-card">
+                                    <div className="news-index">{(index + 1).toString().padStart(2, '0')}</div>
+                                    <div className="news-card-image">
+                                        <img
+                                            src={`https://images.unsplash.com/photo-${[
+                                                '1504384308090-c894fdcc538d',
+                                                '1460925895917-afdab827c52f',
+                                                '1551288049-bebda4e38f71',
+                                                '1451187580459-43490279c0fa',
+                                                '1526628953301-3e589a6a8b74',
+                                                '1517245386807-bb43f82c33c4'
+                                            ][index]}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`}
+                                            alt={item.title}
+                                        />
+                                    </div>
+                                    <div className="news-card-content">
+                                        <span className="news-date">{item.date}</span>
+                                        <h4 className="news-title">{item.title}</h4>
+                                        <p className="news-excerpt">{item.excerpt}</p>
+                                        <a href={item.link} className="news-link">
+                                            READ FULL ARTICLE
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </article>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="press-section">
+                <div className="press-bg-decor"></div>
                 <div className="container">
-                    <div className="card" style={{ padding: '3rem', textAlign: 'center', background: 'var(--primary-color)', color: 'white' }}>
-                        <h2 style={{ color: 'white', marginBottom: '1rem' }}>Press Contacts</h2>
-                        <p style={{ marginBottom: '2rem', opacity: '0.9' }}>For media inquiries, interview requests, or official brand assets, please reach out to our communications team.</p>
-                        <Link to="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: 'var(--primary-color)' }}>Contact PR Team</Link>
+                    <div className="press-contact-card">
+                        <h2>Press Contacts</h2>
+                        <p>For media inquiries, interview requests, or official brand assets, please reach out to our global communications team.</p>
+                        <Link to="/contact" className="btn-modern">Contact PR Team</Link>
                     </div>
                 </div>
             </section>
