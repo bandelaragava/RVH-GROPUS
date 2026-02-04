@@ -3,31 +3,51 @@ import { Link } from 'react-router-dom';
 import OrbitingLogos from '../components/OrbitingLogos';
 import '../components/Partnerships.css';
 
+const businessHeroImages = [
+    'https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&fit=crop&q=80&w=2400', // Aviation Precision
+    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2400', // Global Connectivity
+    // 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2400', // Abstract Technology / Connectivity (Stable)
+];
+
 const Businesses = () => {
     const [selectedSector, setSelectedSector] = useState({
         name: 'Industrial Ecosystem',
         desc: 'Select a sector icon in the orbits to explore our diversified industrial capabilities and institutional excellence.',
         subs: 'Multi-Sector Integration'
     });
+    const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentHeroIndex((prev) => (prev + 1) % businessHeroImages.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="businesses-page">
-            <section className="businesses-hero" style={{
-                height: '85vh',
-                background: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative'
-            }}>
-                <div className="hero-split-overlay">
-                    <div className="container">
-                        <div style={{ maxWidth: '700px', textAlign: 'left' }}>
-                            <span className="section-subtitle" style={{ color: 'var(--accent-gold)', marginBottom: '1.5rem' }}>The Enterprise Standard</span>
-                            <h1 style={{ fontSize: '4.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '1.5rem', color: 'white' }}>Institutional <br />Excellence</h1>
-                            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', borderLeft: '3px solid var(--accent-gold)', paddingLeft: '1.5rem' }}>
-                                Driving multi-sector progress through governed innovation and strategic industrial integration.
-                            </p>
-                        </div>
+            <section className="businesses-hero-surgical">
+                <div className="hero-surgical-bg-carousel">
+                    {businessHeroImages.map((img, idx) => (
+                        <img
+                            key={idx}
+                            src={img}
+                            className={`hero-bg-item ${idx === currentHeroIndex ? 'active' : ''}`}
+                            alt={`Business Architectural Vision ${idx + 1}`}
+                        />
+                    ))}
+                    <div className="hero-surgical-overlay"></div>
+                </div>
+                <div className="container">
+                    <div className="hero-surgical-content">
+                        <span className="hero-surgical-tagline">Architectural Governance</span>
+                        <h1 className="hero-surgical-title">
+                            Institutional <br />
+                            <span className="accent-outline">Excellence</span>
+                        </h1>
+                        <p className="hero-surgical-subtitle">
+                            Driving multi-sector progress through governed innovation and strategic industrial integration.
+                        </p>
                     </div>
                 </div>
             </section>

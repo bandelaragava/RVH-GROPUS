@@ -7,12 +7,13 @@
     padding: 5rem 0;
     position: relative;
     background: linear-gradient(to right, #ffffff, #fcfcfc);
+    padding-right: 30rem;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 100px 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: start;
 }
 

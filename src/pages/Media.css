@@ -228,7 +228,8 @@
 
 .btn-modern {
     background: var(--secondary-color);
-    color: rgb(244, 243, 243);
+    /* color: rgb(244, 243, 243); */
+    -webkit-text-fill-color: #ffffff;
     padding: 1.25rem 3.5rem;
     font-size: 0.9rem;
     font-weight: 700;
@@ -245,6 +246,7 @@
     background: rgba(89, 61, 210, 0.541);
     color: var(--primary-color);
     transform: scale(1.05);
+    -webkit-text-fill-color: black;
 }
 
 /* Decorative background for press section */

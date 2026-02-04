@@ -1,74 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
-// Modern, Unique and Professional Hero Images (Curated set related to Vision/Mission aesthetic)
+// Modern, Unique and Professional Hero Images (Curated set for minimalist ASL-inspired aesthetic)
 const carouselImages = [
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2400', // Premium Architectural Vision
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2400', // Modern Collaboration (Mission Related)
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2400', // Abstract Cyber Security/Tech (Values/Verticals Related)
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2400', // Professional Integrity
-    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2400', // Intelligent Innovation
+    'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=2400', // Minimalist Architecture (ASL Style)
+    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=2400', // Committed Governance
+    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400', // Modern Perspective / Corporate Clarity
+    'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=2400', // Geometric Precision
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2400', // Surgical/Industrial Excellence
 ];
 
 const Hero = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
-        // Auto-rotate images every 3 seconds
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) =>
                 (prevIndex + 1) % carouselImages.length
             );
-        }, 3000);
-
-        // Cleanup interval on component unmount
+        }, 5000); // Slower, more cinematic transition
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <section className="hero" id="home">
-            {/* Carousel Images */}
-            {carouselImages.map((image, index) => (
-                <img
-                    key={index}
-                    src={image}
-                    className={`hero-background ${index === currentImageIndex ? 'active' : ''}`}
-                    alt={`RVH Group Background ${index + 1}`}
-                />
-            ))}
-            <div className="container hero-container">
-                <div className="hero-content">
-                    <h1 className="hero-title">Empowering Ideas With<br /><span className="accent">Intelligent Innovation</span></h1>
-                    <p className="hero-subtitle">Operating across multiple industries, we provide practical technology, operations, and growth engines for companies of every size.</p>
-                    <div className="hero-actions">
-                        <Link to="/about" className="btn btn-primary">Our Legacy</Link>
-                        <Link to="/businesses" className="btn btn-outline" style={{ marginLeft: '1rem', border: '1px solid var(--primary-color)', color: 'white' }}>Our Businesses</Link>
+        <>
+            <section className="hero" id="home">
+                {/* Carousel Images */}
+                {carouselImages.map((image, index) => (
+                    <img
+                        key={index}
+                        src={image}
+                        className={`hero-background ${index === currentImageIndex ? 'active' : ''}`}
+                        alt={`RVH Group Background ${index + 1}`}
+                    />
+                ))}
+                <div className="hero-overlay-minimal"></div>
+
+                <div className="container hero-container">
+                    <div className="hero-content">
+                        <div className="hero-tagline">Operating with Purpose</div>
+                        <h1 className="hero-title">Empowering Ideas with<br /><span className="accent">Surgical Innovation</span></h1>
+                        <p className="hero-subtitle">Leading multi-sector progress through governed excellence and strategic industrial integration.</p>
+                        <div className="hero-actions">
+                            <Link to="/about" className="btn-modern-primary">The Enterprise Standard →</Link>
+                            <Link to="/businesses" className="btn-modern-outline">Explore Verticals</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="hero-snapshot">
+            </section>
+
+            <div className="hero-snapshot-surgical">
                 <div className="container">
-                    <div className="snapshot-grid">
-                        <div className="snapshot-item">
-                            <span className="snapshot-number">25+</span>
-                            <span className="snapshot-label">Years of IMPACT</span>
+                    <div className="snapshot-surgical-grid">
+                        <div className="snapshot-surgical-item">
+                            <span className="surgical-number">25+</span>
+                            <span className="surgical-label">Years of Impact</span>
                         </div>
-                        <div className="snapshot-item">
-                            <span className="snapshot-number">18+</span>
-                            <span className="snapshot-label">Business VERTICALS</span>
+                        <div className="snapshot-surgical-item">
+                            <span className="surgical-number">18+</span>
+                            <span className="surgical-label">Business Verticals</span>
                         </div>
-                        <div className="snapshot-item">
-                            <span className="snapshot-number">5000+</span>
-                            <span className="snapshot-label">Workforce strength</span>
+                        <div className="snapshot-surgical-item">
+                            <span className="surgical-number">5K+</span>
+                            <span className="surgical-label">Workforce Strength</span>
                         </div>
-                        <div className="snapshot-item">
-                            <span className="snapshot-number">5+</span>
-                            <span className="snapshot-label">Global REGIONS</span>
+                        <div className="snapshot-surgical-item">
+                            <span className="surgical-number">GLBL</span>
+                            <span className="surgical-label">Global Presence</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </>
     );
 };
 

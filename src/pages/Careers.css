@@ -192,3 +192,118 @@
     transform: scale(0.90);
     box-shadow: 0 2px 5px rgba(65, 105, 225, 0.3);
 }
+
+/* --- Surgical Hero (ASL Inspired) --- */
+.career-hero-surgical {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.career-hero-surgical .hero-surgical-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.career-hero-surgical .hero-surgical-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    animation: slowZoom 20s linear infinite alternate;
+}
+
+.career-hero-surgical .hero-surgical-overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: 2;
+}
+
+.career-hero-surgical .hero-surgical-content-centered {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.hero-surgical-tagline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--career-accent);
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0;
+    animation: fadeInUpSurgical 1s ease forwards 0.3s;
+}
+
+.hero-surgical-title {
+    font-size: 5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUpSurgical 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s;
+}
+
+.hero-surgical-title .accent-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+}
+
+.hero-surgical-subtitle-centered {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUpSurgical 1s ease forwards 0.7s;
+}
+
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeInUpSurgical {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-surgical-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-surgical-title {
+        font-size: 2.8rem;
+    }
+}

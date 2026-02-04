@@ -538,3 +538,146 @@
 .intelligence-panel {
     animation: fadeIn 0.6s ease-out forwards;
 }
+
+/* --- Businesses Surgical Hero --- */
+.businesses-hero-surgical {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.businesses-hero-surgical .hero-surgical-bg-carousel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-bg-item {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-bg-item.active {
+    opacity: 0.6;
+    animation: slowZoomBusinesses 25s linear infinite alternate;
+}
+
+.businesses-hero-surgical .hero-surgical-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: 2;
+}
+
+.hero-surgical-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding-top: 60px;
+}
+
+.hero-surgical-tagline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    -webkit-text-fill-color: #C5A059;
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0;
+    animation: fadeInUpSurgical 1s ease forwards 0.3s;
+}
+
+.hero-surgical-title {
+    font-size: 5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUpSurgical 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s;
+}
+
+.hero-surgical-title .accent-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+}
+
+.hero-surgical-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeInRightSurgical 1s ease forwards 0.8s;
+}
+
+@keyframes slowZoomBusinesses {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUpSurgical {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRightSurgical {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .businesses-hero-surgical {
+        height: auto;
+        min-height: 70vh;
+        padding: 120px 0 60px;
+    }
+
+    .hero-surgical-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-surgical-subtitle {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid var(--accent-gold);
+        padding-top: 1.5rem;
+        margin: 0 auto;
+    }
+}

@@ -29,21 +29,25 @@ const Careers = () => {
 
     return (
         <div className="careers-page">
-            <section className="career-hero" style={{
-                height: '80vh',
-                background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                textAlign: 'center',
-                paddingTop: '80px'
-            }}>
+            <section className="career-hero-surgical">
+                <div className="hero-surgical-bg">
+                    <img
+                        src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2400"
+                        alt="Modern Workspace"
+                    />
+                    <div className="hero-surgical-overlay-dark"></div>
+                </div>
                 <div className="container">
-                    <h1 style={{ fontSize: '3.5rem', fontWeight: '900', marginBottom: '1rem', color: 'white' }}>Build Your Future With Us</h1>
-                    <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>Join a collective of innovative companies and take the next leap in your career journey.</p>
+                    <div className="hero-surgical-content-centered">
+                        <span className="hero-surgical-tagline">Join the Intelligence</span>
+                        <h1 className="hero-surgical-title">
+                            Build Your <br />
+                            <span className="accent-outline">Future Legacy</span>
+                        </h1>
+                        <p className="hero-surgical-subtitle-centered">
+                            Become part of a elite multi-sector collective driving industrial progress and operational excellence across the globe.
+                        </p>
+                    </div>
                 </div>
             </section>
 
