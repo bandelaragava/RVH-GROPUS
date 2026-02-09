@@ -9,7 +9,7 @@
 }
 
 .section-light-transition {
-    background: linear-gradient(135deg, #FDFDFD 0%, #F8FAFB 50%, #F4F7F9 100%);
+    background: var(--bg-light-black);
     transition: background 0.8s ease;
 }
 
@@ -25,7 +25,7 @@
 /* Subsidiaries Section Overhaul */
 .subsidiaries-institutional {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #F9FBFC 0%, #FFFFFF 30%, #F4F7F9 100%);
+    background: var(--bg-light-black);
     position: relative;
     transition: background 1s ease;
 }
@@ -41,9 +41,9 @@
 
 .subsidiaries-grid-premium {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 6rem;
+    margin-top: 3rem;
 }
 
 .orbit-split-grid {
@@ -51,8 +51,8 @@
     grid-template-columns: 1.50fr 0.50fr;
     gap: 6rem;
     align-items: center;
-    margin-top: 4rem;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
 }
 
 @media (max-width: 1024px) {
@@ -70,8 +70,8 @@
 
 .subsidiary-card-minimal {
     position: relative;
-    padding: 3rem;
-    background: white;
+    padding: 2rem;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
     border: 1px solid var(--border-soft);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
@@ -118,28 +118,28 @@
     right: 2rem;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: rgb(89, 136, 183);
     letter-spacing: 0.2em;
     opacity: 0.5;
 }
 
 .subsidiary-card-minimal h3 {
     font-size: 1.5rem;
-    color: var(--deep-navy);
+    color: #784e4e;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
 }
 
 .subsidiary-card-minimal p {
-    color: var(--text-light);
+    color: rgba(58, 57, 57, 0.85);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
 /* Partnerships Section - Premium Corporate Redesign */
 .partnerships-executive {
-    padding: 8rem 0;
-    background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+    padding: -4rem 0;
+    background: var(--bg-light-black);
     position: relative;
     overflow: hidden;
 }
@@ -169,15 +169,15 @@
 }
 
 .partnerships-executive .section-title {
-    color: var(--primary-color);
-    font-size: 3.5rem;
+    color: #c49246;
+    font-size: clamp(2.2rem, 6vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 
 .partnerships-executive .section-intro {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
     line-height: 1.7;
     color: var(--text-light);
     max-width: 700px;
@@ -187,16 +187,16 @@
 /* Asymmetric Grid Layout */
 .partnerships-grid-premium {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 3vw, 2.5rem);
+    margin-bottom: 7rem;
 }
 
-/* Featured Partnership Card - Spans full width (12 columns) */
+/* Featured Partnership Card */
 .partnership-card-featured {
-    grid-column: span 12;
-    background: linear-gradient(135deg, #003366 0%, #004080 100%);
-    padding: 4rem;
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
+    padding: clamp(2rem, 5vw, 4rem);
     border-radius: 16px;
     position: relative;
     overflow: hidden;
@@ -227,7 +227,7 @@
 .partnership-badge {
     display: inline-block;
     background: rgba(197, 160, 89, 0.2);
-    color: var(--accent-gold);
+    color: lightslategrey;
     padding: 0.5rem 1.2rem;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -238,7 +238,7 @@
 }
 
 .partnership-card-featured h3 {
-    color: white;
+    color: #784e4e;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -246,7 +246,7 @@
 }
 
 .partnership-card-featured p {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(58, 57, 57, 0.85);
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 2rem;
@@ -261,7 +261,7 @@
 
 .feature-tag {
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: rgb(63, 58, 58);
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -272,9 +272,8 @@
 
 /* --- V2 Cinematic Partnership Cards --- */
 .partnership-card-pro {
-    grid-column: span 4;
-    height: 500px;
-    /* Taller editorial aspect ratio */
+    grid-column: span 1;
+    height: clamp(450px, 55vh, 600px);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -283,84 +282,46 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    cursor: default;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
 }
 
-/* Dark Gradient Overlay */
+.partnership-card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark overlay for better text readability */
 .card-pro-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.95) 100%);
-    transition: opacity 0.6s ease;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
+    transition: background 0.5s ease;
 }
 
 .partnership-card-pro:hover .card-pro-overlay {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.85) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
-/* Content Container */
+/* Content wrapper that slides up */
 .card-pro-content {
     position: relative;
     z-index: 2;
-    height: 100%;
-    padding: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Header: Number & Icon */
-.card-pro-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.partnership-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.15);
-    /* Subtle watermark */
-    font-family: 'Outfit', sans-serif;
-    line-height: 1;
-}
-
-.partnership-icon-modern {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #fff;
-    transition: all 0.5s ease;
-}
-
-.partnership-card-pro:hover .partnership-icon-modern {
-    background: var(--accent-gold);
-    color: #0f172a;
-    transform: scale(1.1) rotate(15deg);
-    border-color: var(--accent-gold);
-}
-
-/* Body: Title & Text */
-.card-pro-body {
-    transform: translateY(20px);
-    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.partnership-card-pro:hover .card-pro-body {
+    width: 100%;
+    padding: 2rem;
     transform: translateY(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.partnership-card-pro:hover .card-pro-content {
+    transform: translateY(-60px);
 }
 
 .partnership-card-pro h3 {
     font-family: 'Outfit', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 700;
     color: #fff;
     margin-bottom: 1rem;
@@ -369,157 +330,150 @@
 }
 
 .partnership-card-pro p {
-    font-size: 1.05rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.5s ease 0.1s;
-    /* Slight delay */
     max-height: 0;
-    /* Hide initially for clean look? Or just fade out? Let's hide to focus on art */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
 }
 
-/* On hover, reveal text */
 .partnership-card-pro:hover p {
     opacity: 1;
-    transform: translateY(0);
     max-height: 200px;
 }
 
-/* Gold Border Interaction */
-.partnership-card-pro::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 2px solid var(--accent-gold);
-    border-radius: 20px;
+/* Card header with number and icon - hidden initially */
+.card-pro-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
     opacity: 0;
-    transform: scale(0.95);
-    transition: all 0.5s ease;
-    pointer-events: none;
-    z-index: 3;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.partnership-card-pro:hover::after {
+.partnership-card-pro:hover .card-pro-header {
     opacity: 1;
-    transform: scale(1);
+    max-height: 50px;
 }
 
-/* Background Zoom */
-.partnership-card-pro:hover {
-    background-size: 110%;
-    /* Simulated zoom since we can't transition background-size well in all browsers opacity is better but this works */
-    /* Better way for bg zoom: use a pseudo element or img tag, but background-image on div is simple. */
+.partnership-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
 }
+
+.partnership-icon-modern {
+    font-size: 1.5rem;
+}
+
+
 
 /* CTA Section */
 .partnership-cta-modern {
-    background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
-    padding: 4rem;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
+    padding: clamp(2rem, 5vw, 4rem);
     border-radius: 16px;
     text-align: center;
     border: 2px solid rgba(197, 160, 89, 0.15);
     position: relative;
     overflow: hidden;
+    margin-bottom: 6rem;
 }
 
-.partnership-cta-modern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--primary-color) 100%);
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .partnership-cta-modern h3 {
-    color: var(--primary-color);
-    font-size: 2rem;
+    color: #784e4e;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .partnership-cta-modern p {
-    color: var(--text-light);
-    font-size: 1.1rem;
+    color: rgba(58, 57, 57, 0.85);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     margin-bottom: 2.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.btn-partnership-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: white;
-    padding: 1.2rem 3rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: none;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.2);
+/* Button Styles */
+.btn-partnership-primary,
+.btn-partnership-secondary {
     display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-partnership-primary {
+    background: var(--accent-gold);
+    color: #fff !important;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
 }
 
 .btn-partnership-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 51, 102, 0.3);
+    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+    background: #d4ae6b;
 }
 
 .btn-partnership-secondary {
     background: transparent;
-    color: var(--primary-color);
-    padding: 1.2rem 3rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 2px solid var(--primary-color);
-    transition: all 0.4s ease;
-    display: inline-block;
-    margin-left: 1rem;
+    color: rgb(89, 136, 183);
+    border: 2px solid var(--accent-gold);
 }
 
 .btn-partnership-secondary:hover {
-    background: var(--primary-color);
-    color: white;
+    background: var(--accent-gold);
+    color: #fff !important;
     transform: translateY(-3px);
-}
-
-@media (max-width: 1024px) {
-
-    .partnership-card-featured,
-    .partnership-card-pro {
-        grid-column: span 12;
-    }
-
-    .partnerships-executive .section-title {
-        font-size: 2.5rem;
-    }
+    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.3);
 }
 
 @media (max-width: 768px) {
     .partnerships-executive {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
 
     .partnership-card-featured,
     .partnership-card-pro {
-        padding: 2.5rem;
-    }
-
-    .partnerships-executive .section-title {
-        font-size: 2rem;
+        padding: 1.5rem;
+        height: auto;
+        min-height: 350px;
     }
 
     .btn-partnership-secondary {
         margin-left: 0;
         margin-top: 1rem;
+        width: 100%;
+    }
+
+    .btn-partnership-primary {
+        width: 100%;
     }
 }
 
@@ -586,7 +540,7 @@
 }
 
 .hero-surgical-tagline {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
     font-weight: 700;
     letter-spacing: 0.4em;
     text-transform: uppercase;
@@ -599,7 +553,7 @@
 }
 
 .hero-surgical-title {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 1.05;
     font-weight: 800;
     font-family: 'Outfit', sans-serif;

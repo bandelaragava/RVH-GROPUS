@@ -5,7 +5,7 @@
     /* Remove padding to let images touch edges if desired, or keep minimal */
     padding: 0;
     overflow: hidden;
-    background: #0f172a;
+    background: var(--bg-light-black);
     /* Dark fallback */
 }
 
@@ -80,7 +80,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
-    color: #fff;
+    color: var(--text-gold);
     transition: transform 0.4s ease, color 0.4s ease;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }

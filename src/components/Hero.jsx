@@ -10,6 +10,30 @@ const carouselImages = [
     'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2400', // Surgical/Industrial Excellence
 ];
 
+const Counter = ({ target, duration = 2000, suffix = "" }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            setCount(Math.floor(progress * target));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        const timeoutId = setTimeout(() => {
+            window.requestAnimationFrame(step);
+        }, 1500);
+
+        return () => clearTimeout(timeoutId);
+    }, [target, duration]);
+
+    return <span>{count}{suffix}</span>;
+};
+
 const Hero = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -38,7 +62,7 @@ const Hero = () => {
 
                 <div className="container hero-container">
                     <div className="hero-content">
-                        <div className="hero-tagline">Operating with Purpose</div>
+                        {/* <div className="hero-tagline">Operating with Purpose</div> */}
                         <h1 className="hero-title">Empowering Ideas with<br /><span className="accent">Surgical Innovation</span></h1>
                         <p className="hero-subtitle">Leading multi-sector progress through governed excellence and strategic industrial integration.</p>
                         <div className="hero-actions">
@@ -53,15 +77,21 @@ const Hero = () => {
                 <div className="container">
                     <div className="snapshot-surgical-grid">
                         <div className="snapshot-surgical-item">
-                            <span className="surgical-number">25+</span>
+                            <span className="surgical-number">
+                                <Counter target={25} suffix="+" />
+                            </span>
                             <span className="surgical-label">Years of Impact</span>
                         </div>
                         <div className="snapshot-surgical-item">
-                            <span className="surgical-number">18+</span>
+                            <span className="surgical-number">
+                                <Counter target={18} suffix="+" />
+                            </span>
                             <span className="surgical-label">Business Verticals</span>
                         </div>
                         <div className="snapshot-surgical-item">
-                            <span className="surgical-number">5K+</span>
+                            <span className="surgical-number">
+                                <Counter target={5} suffix="K+" />
+                            </span>
                             <span className="surgical-label">Workforce Strength</span>
                         </div>
                         <div className="snapshot-surgical-item">

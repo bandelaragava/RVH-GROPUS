@@ -1,8 +1,9 @@
 .ir-hero {
     position: relative;
-    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+    background: url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=2400') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    /* Solid black base */
     color: white;
     min-height: 450px;
     display: flex;
@@ -16,10 +17,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.8));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.9) 100%);
+    /* Semi-transparent black overlay */
     z-index: 1;
 }
-
 
 .ir-hero .container {
     position: relative;
@@ -35,7 +36,7 @@
 }
 
 .highlight-card {
-    background: white;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
     padding: 2.5rem;
     border-radius: 4px;
     border: 1px solid var(--border-color);
@@ -54,7 +55,7 @@
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--text-light);
+    color: #784e4e;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -70,7 +71,7 @@
 
 .highlight-period {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: rgba(58, 57, 57, 0.85);
     font-style: italic;
 }
 
@@ -87,7 +88,7 @@
 }
 
 .ir-table th {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
     text-align: left;
     padding: 1.25rem 1.5rem;
     font-size: 0.9rem;
@@ -108,13 +109,14 @@
 }
 
 .ir-table tr:hover td {
-    background-color: #fcfcfc;
+    background-color: rgb(206, 195, 174);
+    color: rgba(58, 57, 57, 0.85);
 }
 
 .btn-text {
     background: none;
     border: none;
-    color: var(--primary-color);
+    color: rgb(89, 136, 183);
     font-weight: 700;
     cursor: pointer;
     font-size: 0.9rem;
@@ -150,8 +152,69 @@
     color: #2e7d32;
 }
 
+.ir-services-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    background-color: #d4c5a4 !important;
+    /* Wheat-inspired but premium */
+    border: 1px solid rgba(120, 78, 78, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.ir-services-card h2 {
+    color: #784e4e;
+    font-size: 2.2rem;
+}
+
+.ir-services-card p {
+    color: rgba(58, 57, 57, 0.85);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.ir-actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-outline-blue {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-blue:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
+}
+
+.ir-hero .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
+}
+
 @media (max-width: 768px) {
     .highlight-value {
         font-size: 2rem;
+    }
+
+    .ir-actions {
+        gap: 1rem;
+    }
+
+    .ir-services-card {
+        padding: 3rem 1.5rem;
     }
 }

@@ -230,20 +230,40 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .orbit-container {
-        max-width: 350px;
+        max-width: 280px;
+        margin: 2rem auto;
     }
 
     .orbit-item {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
     }
 
     .orbit-item span:first-child {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .center-logo-wrapper {
-        width: 65px;
-        height: 65px;
+        width: 55px;
+        height: 55px;
+    }
+
+    /* Recalculate orbit radii for compact view */
+    .orbit-item-inner-wrapper .orbit-item {
+        margin-left: 32%;
+    }
+
+    .orbit-item-outer-wrapper .orbit-item {
+        margin-left: 55%;
+    }
+
+    .guide-inner {
+        width: 64%;
+        height: 64%;
+    }
+
+    .guide-outer {
+        width: 110%;
+        height: 110%;
     }
 }

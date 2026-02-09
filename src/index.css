@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --primary-color: #003366;
@@ -6,13 +6,23 @@
   --secondary-color: #B87333;
   /* Copper/Bronze */
   --accent-color: #004080;
-  --text-dark: #1A1A1A;
-  --text-light: #4A4A4A;
-  --bg-light: #F4F7F9;
-  /* Frost Gray */
-  --bg-white: #FDFDFD;
-  /* Ivory Smoke */
-  --border-color: #E8EEF2;
+  --text-gold: #D49653;
+  /* Copper Gold (Amrit Palace) */
+
+  /* Dark Theme Palette */
+  --bg-light-black: #2C2C2C;
+  /* Graphite (Amrit Palace Fixed) */
+  --bg-dark-card: #2C2C2C;
+  /* Slightly lighter card bg */
+
+  --text-dark: #EAE0D5;
+  /* Warm Beige Body Text */
+  --text-light: #C0B0A0;
+  /* Muted Beige */
+  --bg-light: var(--bg-dark-card);
+  --bg-white: var(--bg-light-black);
+
+  --border-color: #333333;
   --transition-speed: 0.8s;
   --easing-premium: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -20,7 +30,7 @@
   line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light;
+  color-scheme: dark;
   color: var(--text-dark);
   background-color: var(--bg-white);
 
@@ -49,7 +59,7 @@ h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--text-gold);
   line-height: 1.2;
   transition: color var(--transition-speed) var(--easing-premium);
 }
@@ -74,18 +84,19 @@ ul {
 
 /* Utility Classes */
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 5%;
 }
 
 .section-padding {
-  padding: 3rem 0;
+  padding: clamp(1rem, 2vw, 3rem) 0;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -93,6 +104,7 @@ ul {
   cursor: pointer;
   transition: all var(--transition-speed);
   border: none;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .btn-primary {
@@ -128,9 +140,9 @@ ul {
 
 /* Institutional Cards */
 .card {
-  background: white;
+  background: var(--bg-light);
   border-left: 4px solid var(--primary-color);
-  padding: 2rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
@@ -143,15 +155,16 @@ ul {
   display: block;
   color: var(--secondary-color);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1.5rem;
   position: relative;
+  line-height: 1.1;
 }
 
 .section-line {
@@ -168,37 +181,26 @@ ul {
 @media (max-width: 768px) {
   :root {
     font-size: 15px;
-    /* Slightly smaller base font */
   }
 
   .container {
     padding: 0 1.5rem;
   }
+}
 
-  .section-padding {
-    padding: 3rem 0;
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
   }
 
-  .section-title {
-    font-size: 2rem;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
+  .container {
+    padding: 0 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -249,6 +251,31 @@ ul {
 }
 
 /* Auto-staggering for grids */
+/* Terminal Industries Style Reveal Animation */
+@keyframes fadeInUpReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.section-reveal {
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+.section-reveal.active {
+  animation: fadeInUpReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Base class for elements to reveal */
 .verticals-grid .minimal-card:nth-child(n),
 .leadership-grid .leader-card:nth-child(n),
 .subsidiaries-grid .card:nth-child(n),

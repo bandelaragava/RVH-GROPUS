@@ -3,30 +3,6 @@ import './About.css'; // Common styles
 import './Careers.css'; // Specific timeline styles
 
 const Careers = () => {
-    const milestones = [
-        {
-            year: '2023',
-            title: 'The Foundation of Innovation',
-            desc: 'We began as a lean, agile IT solutions company with a bold vision: to innovate far beyond software.'
-        },
-        {
-            year: '2024',
-            title: 'The Leap to Infrastructure',
-            desc: 'Expanded into Real Estate, Interior Design & Digital Marketing, creating strong business synergies and diversified service reach.'
-        },
-        {
-            year: '2025',
-            title: 'The Human & Operational Engine',
-            desc: 'Launched dedicated Training, Tech Support & BPO divisions, strengthening the human and operational foundation for scalable impact.'
-        },
-        {
-            year: 'Future',
-            title: 'Global & Cognitive',
-            desc: 'Next phase includes global expansion with AI-driven solutions, sustainable operations, and internationally recognized infrastructure excellence.',
-            isFuture: true
-        }
-    ];
-
     return (
         <div className="careers-page">
             <section className="career-hero-surgical">
@@ -73,20 +49,6 @@ const Careers = () => {
                         </p>
                     </div>
 
-                    <div className="timeline-section">
-                        <div className="timeline-stepper">
-                            {milestones.map((item, index) => (
-                                <div key={index} className={`timeline-node ${item.isFuture ? 'future' : ''}`}>
-                                    <div className="node-marker"></div>
-                                    <div className="node-content">
-                                        <div className="node-year">{item.year}</div>
-                                        <h3 className="node-title">{item.title}</h3>
-                                        <p className="node-desc">{item.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
 
                     <div className="text-center mt-5">
                         <div className="card" style={{ display: 'inline-block', padding: '3rem', maxWidth: '600px', border: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}>

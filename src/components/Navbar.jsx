@@ -60,7 +60,7 @@ const Navbar = () => {
               <li><Link to="/businesses#subsidiaries">Subsidiaries</Link></li>
             </ul>
           </li>
-          <li><NavLink to="/sustainability">Sustainability</NavLink></li>
+          <li><NavLink to="/our-journey">Our Journey</NavLink></li>
           <li><NavLink to="/careers">Careers</NavLink></li>
           <li><NavLink to="/faqs">FAQ's</NavLink></li>
           <li><NavLink to="/media">Media</NavLink></li>

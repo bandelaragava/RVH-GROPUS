@@ -18,7 +18,7 @@ const FAQItem = ({ question, answer }) => {
                     cursor: 'pointer',
                     fontSize: '1.2rem',
                     fontWeight: '600',
-                    color: 'var(--primary-color)'
+                    color: '#d29457ff'
                 }}
             >
                 {question}
@@ -64,10 +64,22 @@ const FAQs = () => {
                         ))}
                     </div>
 
-                    <div className="text-center mt-5 bg-light p-4" style={{ borderRadius: '4px' }}>
-                        <h3>Still have questions?</h3>
-                        <p className="mb-3">We’re here to help you with any inquiries.</p>
-                        <a href="mailto:info@rvhgroups.com" className="btn btn-primary">Contact Support</a>
+                    <div className="text-center mt-5 p-5" style={{
+                        background: 'linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%)',
+                        borderRadius: '16px',
+                        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+                        padding: '1rem',
+                    }}>
+                        <h3 style={{ color: '#784e4e', marginBottom: '1rem' }}>Still have questions?</h3>
+                        <p className="mb-4" style={{ color: 'rgba(58, 57, 57, 0.85)', fontSize: '1.1rem' }}>We’re here to help you with any inquiries.</p>
+                        <a href="mailto:info@rvhgroups.com" className="btn" style={{
+                            padding: '0.8rem 2rem',
+                            marginTop: '1rem',
+                            background: '#784e4e',
+                            color: '#fff',
+                            borderRadius: '8px',
+                            fontWeight: '700',
+                        }}>Contact Support</a>
                     </div>
                 </div>
             </section>

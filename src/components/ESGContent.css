@@ -1,7 +1,9 @@
 .esg-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    background: transparent;
     position: relative;
     overflow: hidden;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
 }
 
 .esg-section::before {
@@ -18,12 +20,15 @@
 
 .esg-interactive-layout {
     display: flex;
-    gap: 5rem;
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
-    /* Center vertically for better balance */
-    min-height: 650px;
+    min-height: clamp(500px, 60vh, 700px);
     position: relative;
     z-index: 1;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
+    padding: clamp(1.5rem, 5vw, 4rem);
+    border-radius: clamp(1rem, 3vw, 2rem);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
 /* Left Column - Menu */
@@ -37,7 +42,7 @@
 }
 
 .esg-menu-item {
-    padding: 1.8rem 2rem;
+    padding: clamp(1rem, 2vw, 1.8rem) clamp(1rem, 2.5vw, 2rem);
     cursor: pointer;
     border-left: 4px solid transparent;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -78,9 +83,9 @@
 }
 
 .esg-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 700;
-    color: var(--text-dark);
+    color: #784e4e;
     margin: 0;
     transition: all 0.3s ease;
     letter-spacing: -0.01em;
@@ -110,10 +115,9 @@
 }
 
 .esg-description {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     line-height: 1.7;
     color: #555;
-    /* Slightly darker for better readability */
     margin-bottom: 1.8rem;
     font-weight: 400;
 }

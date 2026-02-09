@@ -1,0 +1,481 @@
+/* Sustainability Page Styles */
+.sustainability-page {
+    background: var(--bg-light-black);
+    min-height: 100vh;
+}
+
+/* --- Premium Split Reveal Story Section (Exact Amrit Palace Aesthetic) --- */
+.story-reveal-outer {
+    height: 400vh;
+    /* Smooth scroll duration */
+    position: relative;
+    background: #0A0A0A;
+    /* Deepest black for contrast */
+}
+
+.story-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.story-content-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layer 1: Top Text - Fades OUT and moves UP */
+.story-text-top {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(calc(var(--progress) * -200px));
+    text-align: center;
+    z-index: 10;
+    /* Disappears by 45% scroll */
+    opacity: calc(1 - var(--progress) * 2.2);
+    pointer-events: none;
+    width: 100%;
+}
+
+.our-title {
+    position: relative;
+    top: 3.5rem;
+    right: -1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 13vw, 8rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-transform: lowercase;
+}
+
+.story-subtitle {
+    position: relative;
+    top: 7rem;
+    left: -16rem;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.6em;
+    color: #D49653;
+    /* Amrit Palace Signature Gold */
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.story-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-transform: lowercase;
+}
+
+/* Layer 2: Bottom Title - Fades OUT and moves DOWN */
+.story-text-bottom {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%, 50%) translateY(calc(var(--progress) * 150px));
+    text-align: center;
+    z-index: 10;
+    /* Disappears by 45% scroll */
+    opacity: calc(1 - var(--progress) * 2.2);
+    pointer-events: none;
+    width: 100%;
+}
+
+.bottom-reveal-title {
+    position: relative;
+    top: -1rem;
+    right: -21rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    color: #D49653;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Layer 3: Central Reveal (Horizontal Split) */
+.reveal-mask-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.reveal-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #dfd6c2 0%, #c0b69e 100%);
+    /* Start as thin line in center, expand to full width */
+    clip-path: inset(calc(50% - (20% + var(--progress) * 30%)) calc(50% - (var(--progress) * 50%)) calc(50% - (20% + var(--progress) * 30%)) calc(50% - (var(--progress) * 50%)));
+    transition: clip-path 0.05s ease-out;
+}
+
+.reveal-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure full image is visible without cropping */
+    transform: none;
+    /* Avoid scaling that cuts off edges */
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* Layer 4: Final Narrative - Fades IN at end */
+.story-paragraph-wrapper {
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(30px - (var(--progress) - 0.75) * 60px));
+    width: 100%;
+    padding: 0 10%;
+    text-align: center;
+    z-index: 15;
+    /* Fades in between 75% and 100% scroll */
+    opacity: calc((var(--progress) - 0.75) * 4);
+    pointer-events: none;
+    max-width: 800px;
+}
+
+.story-paragraph {
+    position: relative;
+    bottom: -3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .story-reveal-outer {
+        height: 300vh;
+    }
+
+    .story-title {
+        font-size: 6rem;
+    }
+
+    .bottom-reveal-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .story-text-top {
+        top: 42%;
+    }
+
+    .story-text-bottom {
+        bottom: 42%;
+    }
+
+    .reveal-image-wrapper {
+        clip-path: inset(calc(50% - (20% + var(--progress) * 30%)) calc(50% - (10% + var(--progress) * 40%)) calc(50% - (20% + var(--progress) * 30%)) calc(50% - (10% + var(--progress) * 40%)));
+    }
+}
+
+/* --- Career Purpose Section --- */
+.career-purpose-section {
+    background: rgb(218, 208, 192);
+    padding: 10rem 2rem;
+    position: relative;
+    z-index: 10;
+    margin-top: 1rem;
+}
+
+.section-main-heading {
+    position: relative;
+    top: -6rem;
+    left: -23rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 7vw, 5rem);
+    font-weight: 400;
+    color: #0c0c0c;
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
+}
+
+.career-content-card {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.career-title {
+    position: relative;
+    top: 0rem;
+    right: -21rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    color: #784e4e;
+    margin: 1rem 0 2rem;
+    line-height: 1.1;
+}
+
+.career-description {
+    position: relative;
+    top: -1rem;
+    right: -22rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+    line-height: 1.8;
+    color: rgba(58, 57, 57, 0.85);
+    margin-bottom: 3.5rem;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.career-actions {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-premium {
+    position: relative;
+    top: 8rem;
+    background: #D49653;
+    color: #eeecec;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    border: 1px solid #D49653;
+}
+
+.btn-premium:hover {
+    background: transparent;
+    color: #D49653;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 150, 83, 0.2);
+}
+
+.btn-outline-gold {
+    position: relative;
+    top: 8rem;
+    background: transparent;
+    color: #D49653;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(212, 150, 83, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+}
+
+.btn-outline-gold:hover {
+    border-color: #D49653;
+    background: rgba(212, 150, 83, 0.05);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .career-purpose-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .career-actions {
+        gap: 1rem;
+    }
+
+    .btn-premium,
+    .btn-outline-gold {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Milestones Section - Premium Curtain Stacking (Wipe Effect) */
+.milestones-curtain-section {
+    background: var(--bg-light-black);
+    position: relative;
+    overflow: visible;
+    padding-top: 5rem;
+}
+
+.milestones-curtain-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    position: relative;
+}
+
+.milestone-curtain-item {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-light-black);
+}
+
+/* Shadow for depth */
+.milestone-curtain-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 3.7.5rem;
+    width: 80%;
+    height: 60px;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.milestone-curtain-card {
+    width: 80%;
+    height: 85%;
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border-top: 1px solid rgba(212, 150, 83, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(2rem, 8vw, 5rem);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.milestone-bg-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(10rem, 20vw, 15rem);
+    font-weight: 900;
+    color: rgba(212, 150, 83, 0.03);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+}
+
+.milestone-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.milestone-number-badge {
+    position: absolute;
+    top: -12.5rem;
+    left: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: rgb(89, 136, 183);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.milestone-year-tag {
+    position: absolute;
+    top: -10rem;
+    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(1.2rem, 3vw, 2rem);
+    background: linear-gradient(135deg, var(--text-gold), #8e622b);
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 900;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 30px rgba(212, 150, 83, 0.2);
+}
+
+.milestone-title {
+    position: absolute;
+    top: -5.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 900;
+    color: #784e4e;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.milestone-desc {
+    position: absolute;
+    top: 2rem;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.7;
+    color: rgba(58, 57, 57, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .milestones-curtain-container {
+        width: 100%;
+        padding: 0 5%;
+    }
+
+    .milestone-curtain-card {
+        height: 90%;
+        padding: 3rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .milestone-content {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestones-curtain-container {
+        padding: 0 1rem;
+    }
+
+    .milestone-curtain-card {
+        padding: 2rem 1rem;
+    }
+}

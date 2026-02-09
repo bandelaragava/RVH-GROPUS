@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OrbitingLogos from '../components/OrbitingLogos';
+import ESGContent from '../components/ESGContent';
 import '../components/Partnerships.css';
 
 const businessHeroImages = [
@@ -82,7 +83,8 @@ const Businesses = () => {
                         <div className="orbit-content-side">
                             <div className="intelligence-panel" key={selectedSector.name} style={{
                                 padding: '2rem',
-                                background: 'rgba(255, 255, 255, 0.4)',
+                                background: 'linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%)',
+                                // background: 'rgba(255, 255, 255, 0.4)',
                                 backdropFilter: 'blur(20px)',
                                 borderRadius: '24px',
                                 border: '1px solid rgba(197, 160, 89, 0.1)',
@@ -212,6 +214,8 @@ const Businesses = () => {
                 </div>
             </section>
 
+            <ESGContent />
+
             <section className="partnerships-executive" id="partnerships">
                 <div className="container">
                     <div className="section-header text-center">
@@ -236,6 +240,7 @@ const Businesses = () => {
                                 <span className="feature-tag">Multi-Year Commitments</span>
                                 <span className="feature-tag">Equity Participation</span>
                             </div>
+
                         </div>
 
                         {/* Standard Partnership 1 */}
@@ -252,6 +257,7 @@ const Businesses = () => {
                                         Global collaborations for large-scale infrastructure and industrial projects requiring shared expertise and resources.
                                     </p>
                                 </div>
+
                             </div>
                         </div>
 
@@ -269,6 +275,7 @@ const Businesses = () => {
                                         Vendor partnerships and logistical integration opportunities within our diversified industrial ecosystem.
                                     </p>
                                 </div>
+
                             </div>
                         </div>
 
@@ -286,6 +293,7 @@ const Businesses = () => {
                                         Research partnerships and technology transfer programs driving digital transformation across traditional industries.
                                     </p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -296,12 +304,14 @@ const Businesses = () => {
                         <p>
                             Our investment team is available to discuss strategic collaboration, co-investment structures, and partnership frameworks tailored to your institutional objectives.
                         </p>
-                        <Link to="/contact" className="btn-partnership-primary">
-                            Schedule Consultation
-                        </Link>
-                        <Link to="/investor-relations" className="btn-partnership-secondary">
-                            View Investment Deck
-                        </Link>
+                        <div className="cta-actions">
+                            <Link to="/contact" className="btn-partnership-primary">
+                                Schedule Consultation
+                            </Link>
+                            <Link to="/investor-relations" className="btn-partnership-secondary">
+                                View Investment Deck
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

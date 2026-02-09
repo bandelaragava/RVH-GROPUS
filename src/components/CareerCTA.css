@@ -1,5 +1,5 @@
 .career-cta-section {
-    padding: 100px 0;
+    padding: 3.5rem 0;
     background: var(--bg-light);
 }
 
@@ -15,6 +15,7 @@
     height: auto;
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 .career-text-col {

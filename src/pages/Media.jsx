@@ -98,8 +98,8 @@ const Media = () => {
                 <div className="press-bg-decor"></div>
                 <div className="container">
                     <div className="press-contact-card">
-                        <h2>Press Contacts</h2>
-                        <p>For media inquiries, interview requests, or official brand assets, please reach out to our global communications team.</p>
+                        <h2 style={{ color: '#784e4e' }}>Press Contacts</h2>
+                        <p style={{ color: 'rgba(58, 57, 57, 0.85)' }}>For media inquiries, interview requests, or official brand assets, please reach out to our global communications team.</p>
                         <Link to="/contact" className="btn-modern">Contact PR Team</Link>
                     </div>
                 </div>

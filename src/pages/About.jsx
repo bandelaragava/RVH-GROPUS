@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ChairmanMessage from '../components/ChairmanMessage';
 import VisionMission from '../components/VisionMission';
 import './About.css';
@@ -23,6 +23,30 @@ const leaders = [
         image: '/assets/leader_3_sharma.png',
         bio: 'Overseeing financial governance and capital allocation strategies. Ms. Sharma ensures fiscal discipline and robustness, safeguarding the group’s long-term financial health.'
     },
+];
+
+const milestones = [
+    {
+        year: '2023',
+        title: 'The Foundation of Innovation',
+        desc: 'We began as a lean, agile IT solutions company with a bold vision: to innovate far beyond software.'
+    },
+    {
+        year: '2024',
+        title: 'The Leap to Infrastructure',
+        desc: 'Expanded into Real Estate, Interior Design & Digital Marketing, creating strong business synergies and diversified service reach.'
+    },
+    {
+        year: '2025',
+        title: 'The Human & Operational Engine',
+        desc: 'Launched dedicated Training, Tech Support & BPO divisions, strengthening the human and operational foundation for scalable impact.'
+    },
+    {
+        year: 'Future',
+        title: 'Global & Cognitive',
+        desc: 'Next phase includes global expansion with AI-driven solutions, sustainable operations, and internationally recognized infrastructure excellence.',
+        isFuture: true
+    }
 ];
 
 
@@ -109,7 +133,7 @@ const About = () => {
                                 <div className="leader-info">
                                     <h4 className="leader-name">{leader.name}</h4>
                                     <p className="leader-role">{leader.role}</p>
-                                    <p className="leader-bio" style={{ fontSize: '0.9rem', color: 'var(--text-light)', marginTop: '0.75rem', lineHeight: '1.6' }}>
+                                    <p className="leader-bio" style={{ fontSize: '0.9rem', color: 'rgba(58, 57, 57, 0.85)', marginTop: '0.75rem', lineHeight: '1.6' }}>
                                         {leader.bio}
                                     </p>
                                 </div>

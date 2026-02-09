@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './InvestorRelations.css';
 
 const InvestorRelations = () => {
@@ -87,12 +88,12 @@ const InvestorRelations = () => {
 
             <section className="ir-contact section-padding">
                 <div className="container text-center">
-                    <div className="card" style={{ maxWidth: '800px', margin: '0 auto', padding: '3rem' }}>
+                    <div className="card ir-services-card">
                         <h2 className="mb-2">Investor Services</h2>
                         <p className="mb-3">For specific inquiries regarding shareholding, financial statements, or institutional investment opportunities, please reach out to our IR team.</p>
-                        <div className="d-flex justify-content-center gap-2">
+                        <div className="ir-actions">
                             <a href="mailto:ir@rvhgroups.com" className="btn btn-primary">Email IR Team</a>
-                            <a href="/contact" className="btn btn-outline" style={{ border: '1px solid var(--primary-color)', color: 'var(--primary-color)' }}>General Inquiries</a>
+                            <Link to="/contact" className="btn btn-outline-blue">General Inquiries</Link>
                         </div>
                     </div>
                 </div>

@@ -57,14 +57,7 @@ const Home = () => {
             {/* Latest News Section - Now using InsightsUpdates component */}
             <InsightsUpdates />
 
-            {/* Sustainability CTA */}
-            <section className="section-padding bg-light" id="sustainability">
-                <div className="container text-center">
-                    <h2 className="mb-1">Commitment to ESG</h2>
-                    <p className="mb-2" style={{ maxWidth: '700px', margin: '0 auto 2rem' }}>We operate with a deep sense of responsibility towards our environment, our society, and our stakeholders. Our governance-first mindset ensures sustainable growth across all sectors.</p>
-                    <Link to="/sustainability" className="btn btn-primary">Learn About Our ESG Pillars</Link>
-                </div>
-            </section>
+
         </>
     );
 };

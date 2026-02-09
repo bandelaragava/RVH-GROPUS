@@ -1,5 +1,6 @@
 .why-choose-section {
     position: relative;
+    top: -2.5rem;
     overflow: hidden;
 }
 
@@ -44,7 +45,7 @@
 }
 
 .value-card-modern {
-    background: var(--bg-light);
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 12px;
@@ -58,10 +59,14 @@
 }
 
 .value-card-modern:hover {
-    background: #ffffff;
+    background: #333333;
     transform: translateY(-8px);
     border-color: var(--secondary-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.value-card-modern:hover .value-description {
+    color: rgb(89, 136, 183);
 }
 
 .value-icon-wrapper {
@@ -91,7 +96,7 @@
 .value-description {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: var(--text-light);
+    color: rgba(58, 57, 57, 0.85);
     margin: 0;
 }
 

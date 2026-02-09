@@ -43,7 +43,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     font-style: italic;
-    color: var(--primary-color);
+    color: rgb(154, 197, 211);
     margin: 1.5rem 0;
     border-left: 4px solid var(--secondary-color);
     padding-left: 1.5rem;
@@ -58,7 +58,7 @@
 
 .chairman-name {
     font-weight: 700;
-    color: var(--primary-color);
+    color: rgb(89, 136, 183);
     margin-bottom: 0.25rem;
     margin-top: -8rem;
 }

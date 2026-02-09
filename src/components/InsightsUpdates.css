@@ -1,6 +1,6 @@
 .insights-updates-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+    background: var(--bg-light-black);
     position: relative;
     overflow: hidden;
 }
@@ -66,7 +66,7 @@
 
 .insight-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(135deg, #d8cbad 0%, #cdba8b 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -158,14 +158,14 @@
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(89, 136, 183);
     text-transform: uppercase;
 }
 
 .card-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #784e4e;
     margin-bottom: 1rem;
     line-height: 1.4;
     transition: color 0.3s ease;
@@ -177,7 +177,7 @@
 
 .card-excerpt {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(58, 57, 57, 0.85);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -188,7 +188,7 @@
     gap: 0.5rem;
     font-size: 0.9rem;
     font-weight: 700;
-    color: #d4ff00;
+    color: rgb(89, 136, 183);
     /* Bright highlighter yellow/green */
     text-decoration: none;
     transition: all 0.3s ease;
