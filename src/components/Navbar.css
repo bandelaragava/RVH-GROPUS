@@ -36,10 +36,30 @@
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    height: 3rem;
+    width: auto;
+    margin-right: 0.8rem;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.logo:hover .navbar-logo-img {
+    transform: scale(1.1);
+}
+
 .logo-text {
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
 }
 
 .logo-accent {

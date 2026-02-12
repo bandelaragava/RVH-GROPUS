@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ChairmanMessage from '../components/ChairmanMessage';
+import LeadershipHero from '../components/LeadershipHero';
 import VisionMission from '../components/VisionMission';
 import './About.css';
 
@@ -108,6 +109,11 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+
+            <div id="leadership-hero">
+                <LeadershipHero />
+            </div>
 
             <div id="chairman">
                 <ChairmanMessage />

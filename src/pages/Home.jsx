@@ -2,42 +2,13 @@ import React from 'react';
 import Hero from '../components/Hero';
 import SourcesOverview from '../components/SourcesOverview';
 import WhyChoose from '../components/WhyChoose';
-import careerRoad from '../assets/careerRoad.png';
-
-import ChairmanMessage from '../components/ChairmanMessage';
-import VisionMission from '../components/VisionMission';
 import InsightsUpdates from '../components/InsightsUpdates';
 import { Link } from 'react-router-dom';
-import '../components/CareerCTA.css';
-
-
 const Home = () => {
     return (
         <>
             <Hero />
             <SourcesOverview />
-
-            {/* Career Section with roadMap image */}
-            <section className="career-cta-section">
-                <div className="container">
-                    <div className="career-content-grid">
-                        <div className="career-image-col">
-                            <img src={careerRoad} alt="RVH Road Map" className="career-road-map" />
-                        </div>
-                        <div className="career-text-col">
-                            <span className="section-subtitle">Join the Evolution</span>
-                            <h2 className="section-title">Build a Career with Purpose</h2>
-                            <p className="career-p">
-                                Discover opportunities across our 9+ business verticals. At RVH Group, we don't just offer jobs — we provide the platform to lead, innovate, and grow in a multi-sector ecosystem.
-                            </p>
-                            <div className="cta-buttons">
-                                <Link to="/careers" className="btn btn-primary" style={{ marginRight: '1rem' }}>Explore Roles</Link>
-                                <Link to="/about" className="btn btn-outline">Our Values</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <WhyChoose />
             <section className="section-padding" id="momentum">

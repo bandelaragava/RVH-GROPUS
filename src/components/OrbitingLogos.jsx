@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OrbitingLogos.css';
 
-import logoMain from '../assets/logo.png';
+import logoMain from '../assets/RVHLogopng.png';
 
 const innerSectors = [
     { id: 'IT', icon: '💻', name: 'SOFTWARE & IT', shortName: 'IT', desc: 'Enterprise digital core systems and scaled infrastructure.', subs: 'FutureInvo Systems' },

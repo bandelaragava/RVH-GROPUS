@@ -198,7 +198,7 @@ const Businesses = () => {
                             <span className="subsidiary-index">02 / ACADEMY</span>
                             <h3>Gyantrix Academy</h3>
                             <p>Our dedicated wing for training and professional development, empowering talent with industry-focused learning systems.</p>
-                            <Link to="/careers" style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>View Courses →</Link>
+                            <Link to="/courses" style={{ color: 'var(--accent-gold)', fontWeight: '700', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>View Courses →</Link>
                         </div>
                         <div className="subsidiary-card-minimal">
                             <span className="subsidiary-index">03 / CREATIVE</span>

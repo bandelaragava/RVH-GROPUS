@@ -66,8 +66,9 @@
     box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
 }
 
+/* background size */
 .center-logo-wrapper img {
-    width: 75%;
+    width: 56px;
     height: auto;
 }
 

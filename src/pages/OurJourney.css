@@ -34,7 +34,7 @@
 /* Layer 1: Top Text - Fades OUT and moves UP */
 .story-text-top {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(calc(var(--progress) * -200px));
     text-align: center;
@@ -125,10 +125,12 @@
 
 .reveal-image-wrapper {
     position: relative;
+    top: 3rem;
+    bottom: 6rem;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(135deg, #dfd6c2 0%, #c0b69e 100%);
+    background: rgb(255, 255, 255);
     /* Start as thin line in center, expand to full width */
     clip-path: inset(calc(50% - (20% + var(--progress) * 30%)) calc(50% - (var(--progress) * 50%)) calc(50% - (20% + var(--progress) * 30%)) calc(50% - (var(--progress) * 50%)));
     transition: clip-path 0.05s ease-out;
@@ -211,10 +213,39 @@
     margin-top: 1rem;
 }
 
+.journey-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.journey-image-side {
+    position: relative;
+    top: -3.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.journey-side-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.journey-image-side:hover .journey-side-image {
+    transform: scale(1.05);
+}
+
 .section-main-heading {
     position: relative;
-    top: -6rem;
-    left: -23rem;
+    top: -6.5rem;
+    left: -29rem;
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 7vw, 5rem);
     font-weight: 400;
@@ -226,14 +257,13 @@
 
 .career-content-card {
     max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    /* Align text to left to balance the grid */
 }
 
 .career-title {
     position: relative;
     top: 0rem;
-    right: -21rem;
     font-family: 'Playfair Display', serif;
     font-size: clamp(1rem, 3.5vw, 2.5rem);
     font-weight: 400;
@@ -245,15 +275,13 @@
 .career-description {
     position: relative;
     top: -1rem;
-    right: -22rem;
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(0.5rem, 1vw, 1rem);
     line-height: 1.8;
     color: rgba(58, 57, 57, 0.85);
     margin-bottom: 3.5rem;
     max-width: 30rem;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; Removed for left alignment in grid */
 }
 
 .career-actions {
@@ -265,7 +293,8 @@
 
 .btn-premium {
     position: relative;
-    top: 8rem;
+    top: 9.5rem;
+    right: 19rem;
     background: #D49653;
     color: #eeecec;
     padding: 1rem 2rem;
@@ -286,7 +315,8 @@
 
 .btn-outline-gold {
     position: relative;
-    top: 8rem;
+    top: 9.5rem;
+    right: 19rem;
     background: transparent;
     color: #D49653;
     padding: 1rem 2.5rem;
@@ -305,8 +335,22 @@
 }
 
 @media (max-width: 768px) {
+    .journey-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
     .career-purpose-section {
         padding: 6rem 1.5rem;
+    }
+
+    .career-content-card {
+        text-align: center;
+    }
+
+    .career-title,
+    .career-description {
+        right: 0;
     }
 
     .career-actions {

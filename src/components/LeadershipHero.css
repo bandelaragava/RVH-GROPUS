@@ -1,0 +1,205 @@
+/* LeadershipHero.css */
+.leadership-hero-container {
+    position: relative;
+    height: 150vh;
+    background-color: #0d1412;
+    /* Fallback */
+}
+
+.leadership-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    /* Remove flex centering from wrapper, handle in layers */
+    display: block;
+    padding: 0;
+    color: #ffffff;
+    /* This will be overridden by layers, but kept for general context */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Layer Positioning */
+.leadership-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 
+   LAYER 1: BASE 
+   Dark Background, White Text
+*/
+.layer-base {
+    background-color: #0d1412;
+    color: #ffffff;
+    z-index: 1;
+}
+
+/* 
+   LAYER 2: OVERLAY 
+   Beige Background, Brown Text
+   Clipped based on scroll
+*/
+.layer-overlay {
+    background-color: rgb(218, 208, 192);
+    color: black;
+    z-index: 2;
+
+    /* 
+       Wipe Effect: 
+       Starts fully clipped (invisible).
+       Reveals as scroll progresses (inset 0).
+       
+       Direction: Wipe from Bottom to Top? Or Top to Bottom?
+       Let's try wiping from Bottom Up like a liquid fill, or Top Down like a curtain.
+       
+       Standard scroll-driven wipes usually reveal the new content as you scroll down.
+       Since we want "scroll -> color change", we can wipe from top (inset top 0) 
+       downwards (inset bottom decreases).
+       
+       Let's do: inset(0 0 [bottom_value] 0);
+       At 0% scroll: inset(0 0 100% 0) -> fully hidden (clipped from bottom up)
+       At 100% scroll: inset(0 0 0 0) -> fully visible
+    */
+    clip-path: inset(0 0 calc(100% - (var(--scroll-progress) * 100%)) 0);
+
+    /* accelerated wipe? */
+    /* clip-path: inset(0 0 calc(100% - (var(--scroll-progress) * 120%)) 0); */
+}
+
+/* Base Section Layout */
+.leadership-hero-section {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    /* Removed flex centering from here, handled by .leadership-layer */
+    text-align: center;
+}
+
+/* Container for the single state */
+.leadership-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Text Styles */
+.hero-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    /* Keep label white or transition it too? Let's transition it to dark grey for visibility on beige */
+    /* White -> Dark Grey (#333) */
+    color: inherit;
+    /* Inherits from layer */
+}
+
+.hero-title {
+    font-size: 7vw;
+    font-weight: 650;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: -0.03em;
+
+    /* Flex to allow spans to collapse nicely */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animation Logic for Collapsing Characters */
+.hero-char-keep {
+    /* These letters always stay visible */
+    transition: transform 0.1s linear;
+
+    /* 
+       Color Transition: White (#fff) -> Brown (#784e4e = rgb(120, 78, 78))
+       Formula: 255 - (Diff * progress)
+       R: 255 -> 120 (-135)
+       G: 255 -> 78 (-177)
+       B: 255 -> 78 (-177)
+    */
+    color: #be9393;
+    /* Inherits White or Brown from layer */
+}
+
+.hero-char-hide {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* Default State (Scroll 0) */
+    opacity: 1;
+    max-width: 1em;
+    transform: scale(1);
+
+    /* Transition color same as keep chars so they don't look weird while fading */
+    color: inherit;
+    /* Inherits White or Brown from layer */
+
+    /* Opacity: Ends (0) around 50% scroll */
+    opacity: calc(1 - (var(--scroll-progress) * 3));
+
+    /* Width/Spacing: Collapses to 0 */
+    max-width: calc(100vw * (1 - (var(--scroll-progress) * 2)));
+    margin: 0 calc(0px * (1 - var(--scroll-progress)));
+
+    /* Scale down slightly */
+    transform: scaleX(calc(1 - (var(--scroll-progress) * 0.5)));
+    transform-origin: center;
+}
+
+
+.hero-accent {
+    /* Maintained for legacy if needed, but overridden by specific char styles now */
+    color: inherit;
+}
+
+.hero-description {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+
+    /* Description Persists now, just wipes color */
+    color: inherit;
+    opacity: 0.8;
+    /* Slight transparency relative to layer color */
+
+    border-top: 1px solid currentColor;
+    /* Use current color for border */
+    padding-top: 2rem;
+    max-width: 600px;
+    width: 100%;
+
+    /* Removed fade/move animation so it stays visible and wipes color */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .leadership-hero-container {
+        height: 200vh;
+    }
+
+    .hero-title {
+        font-size: 12vw;
+    }
+
+    .hero-label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}

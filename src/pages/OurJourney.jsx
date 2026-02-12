@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './OurJourney.css';
 import careerRoadImage from '../assets/careerRoad.png';
+import journeyImg from '../assets/generated-image-1.png';
 
 const milestones = [
     {
@@ -92,17 +93,22 @@ const Sustainability = () => {
             <section className="career-purpose-section">
                 <div className="container">
                     <h2 className="section-main-heading">Our Journey</h2>
-                    <div className="career-content-card">
-                        <span className="section-subtitle">Join Our Vision</span>
-                        <h2 className="career-title">Build a Career with Purpose</h2>
-                        <div className="section-line"></div>
-                        <p className="career-description">
-                            Discover opportunities across our 9+ business verticals. At RVH Group, we don't just offer jobs —
-                            we provide the platform to lead, innovate, and grow in a multi-sector ecosystem.
-                        </p>
-                        <div className="career-actions">
-                            <Link to="/careers" className="btn btn-premium">Explore Roles</Link>
-                            <Link to="/about#values" className="btn btn-outline-gold">Our Values</Link>
+                    <div className="journey-grid-layout">
+                        <div className="journey-image-side">
+                            <img src={journeyImg} alt="Journey Vision" className="journey-side-image" />
+                        </div>
+                        <div className="career-content-card">
+                            <span className="section-subtitle">Join Our Vision</span>
+                            <h2 className="career-title">Build a Career with Purpose</h2>
+                            <div className="section-line"></div>
+                            <p className="career-description">
+                                Discover opportunities across our 9+ business verticals. At RVH Group, we don't just offer jobs —
+                                we provide the platform to lead, innovate, and grow in a multi-sector ecosystem.
+                            </p>
+                            <div className="career-actions">
+                                <Link to="/careers" className="btn btn-premium">Explore Roles</Link>
+                                <Link to="/about#values" className="btn btn-outline-gold">Our Values</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -141,6 +141,20 @@
     color: var(--text-gold);
     text-decoration: none;
     letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-img {
+    height: clamp(55px, 7vw, 75px);
+    width: auto;
+    margin-right: 1.2rem;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    object-fit: contain;
+}
+
+.footer-logo:hover .footer-logo-img {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .footer-pro-desc {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import bgVideo from '../assets/animationBag.mp4';
+import logoImg from '../assets/image1.jpg';
 
 const Footer = () => {
     return (
@@ -25,6 +26,7 @@ const Footer = () => {
             <div className="container footer-pro-grid">
                 <div className="footer-pro-brand">
                     <Link to="/" className="footer-logo">
+                        <img src={logoImg} alt="RVH Logo" className="footer-logo-img" />
                         RVH <span className="logo-accent">GROUP</span>
                     </Link>
                     <p className="footer-pro-desc">
