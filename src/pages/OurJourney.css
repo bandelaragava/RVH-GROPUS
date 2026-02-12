@@ -106,7 +106,14 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 400;
-    color: #D49653;
+    animation-delay: 0.7s;
+    background: linear-gradient(135deg, #646dce 0%, var(--text-gold) 35%, #82a0b6 70%, var(--text-gold) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textRevealPremium 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards 0.7s,
+        gradientFlow 8s linear infinite;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.2;
@@ -249,7 +256,13 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 7vw, 5rem);
     font-weight: 400;
-    color: #0c0c0c;
+    background: linear-gradient(135deg, #646dce 0%, var(--text-gold) 35%, #82a0b6 70%, var(--text-gold) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textRevealPremium 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards 0.7s,
+        gradientFlow 8s linear infinite;
     text-align: center;
     margin-bottom: 4rem;
     letter-spacing: -0.02em;

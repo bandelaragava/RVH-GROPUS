@@ -4,9 +4,9 @@ import './Hero.css';
 // Modern, Unique and Professional Hero Images (Curated set for minimalist ASL-inspired aesthetic)
 const carouselImages = [
     'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=2400', // Minimalist Architecture (ASL Style)
-    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=2400', // Committed Governance
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400', // Modern Perspective / Corporate Clarity
-    'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&q=80&w=2400', // Geometric Precision
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2400', // Digital Innovation
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2400', // Financial Excellence
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2400', // Real Estate Development
     'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2400', // Surgical/Industrial Excellence
 ];
 
@@ -62,9 +62,18 @@ const Hero = () => {
 
                 <div className="container hero-container">
                     <div className="hero-content">
-                        {/* <div className="hero-tagline">Operating with Purpose</div> */}
-                        <h1 className="hero-title">Empowering Ideas with<br /><span className="accent">Surgical Innovation</span></h1>
-                        <p className="hero-subtitle">Leading multi-sector progress through governed excellence and strategic industrial integration.</p>
+                        <div className="hero-tagline-modern">
+                            <span className="dot"></span>
+                            Institutional Governance & Global Impact
+                        </div>
+                        <h1 className="hero-title-premium">
+                            <span className="text-reveal">Architecting Sustainable</span>
+                            <br />
+                            <span className="text-reveal accent-gradient">Progress <span className="serif-accent">Through</span> Excellence</span>
+                        </h1>
+                        <p className="hero-subtitle-modern">
+                            Leading multi-sector transformation with disciplined governance, strategic industrial integration, and an unwavering commitment to institutional standards.
+                        </p>
                         <div className="hero-actions">
                             <Link to="/about" className="btn-modern-primary">The Enterprise Standard →</Link>
                             <Link to="/businesses" className="btn-modern-outline">Explore Verticals</Link>

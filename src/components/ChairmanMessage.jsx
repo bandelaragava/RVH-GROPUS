@@ -26,7 +26,7 @@ const ChairmanMessage = () => {
                         Our journey is defined not just by the scale of our businesses, but by the integrity with which we operate. We believe in building durable assets that create value for generations. Our focus remains on sectors that power the future, while maintaining the highest weights of institutional responsibility.
                     </p>
                     <div className="chairman-sign">
-                        <p className="chairman-name">Raghu Vamshi</p>
+                        <p className="chairman-name">Raghu Vamshi Haaripuri</p>
                         <p className="chairman-title">Chairman & Founder, RVH Group</p>
                     </div>
                 </div>

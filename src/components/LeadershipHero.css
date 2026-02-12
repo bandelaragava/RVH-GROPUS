@@ -149,7 +149,7 @@
     transform: scale(1);
 
     /* Transition color same as keep chars so they don't look weird while fading */
-    color: inherit;
+    color: white;
     /* Inherits White or Brown from layer */
 
     /* Opacity: Ends (0) around 50% scroll */
